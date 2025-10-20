@@ -3,7 +3,7 @@
 * @param char* str: string to convert.
 * @return return the converted int.
 */
-int positif_atoi(char *str)
+int positive_atoi(char *str)
 {
     int index = 0;
     int result = 0;
@@ -15,7 +15,7 @@ int positif_atoi(char *str)
 
     if (str[index] == '-')
     {
-        exit(1);
+        return NULL;
     }
 
     while (str[index] != '\0' && str[index] != ' ')
