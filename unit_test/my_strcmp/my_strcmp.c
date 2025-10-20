@@ -37,9 +37,25 @@ int main()
     char* test1 = "Test";
     char* test2 = "Test1";
 
-    printf("test1 : %s\n", test1);
-    printf("test2 : %s\n", test2);
     if (my_strcmp(test1, test2) == 1)
+    {
+        return 1;
+    }
+    else return 0;
+
+    char* test3 = "abc";
+    char* test4 = "ABC";
+
+    if (my_strcmp(test1, test2) == -1)
+    {
+        return 1;
+    }
+    else return 0;
+
+    char* test3 = "toto";
+    char* test4 = "toto";
+
+    if (my_strcmp(test1, test2) == 0)
     {
         return 1;
     }
