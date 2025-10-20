@@ -4,7 +4,7 @@
 #### My Strlen is a function that calculates the size of a string. If the string is NULL, returns 1.
 ---
 ## Parameters :
-- String : array of character that size needs to be calculated.
+- string : array of character that size needs to be calculated.
 ---
 ## Return :
 - Return an int that is the size of the string.

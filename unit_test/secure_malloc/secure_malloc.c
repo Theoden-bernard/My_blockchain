@@ -1,10 +1,7 @@
-#ifdef UNIT_TEST
-#endif
-
 #include <unistd.h>
 
 /**
-* @summary malloc the buffer and verify the result of the malloc.
+* @brief malloc the buffer and verify the result of the malloc.
 * @param size_t size: size for the malloc.
 * @return return the buffer that has been malloc.
 */
@@ -21,6 +18,7 @@ void* secure_malloc(size_t size)
     return buff;
 }
 
+#ifdef UNIT_TEST
 int main()
 {
     char* test = secure_malloc(2);
@@ -28,3 +26,4 @@ int main()
 
     return 0;
 }
+#endif
