@@ -12,6 +12,6 @@
 ---
 ## Exemple : 
 ```c
-positif_atoi("34");
+positive_atoi("34");
 ```
-positif_atoi("34") = 34
+positive_atoi("34") = 34
