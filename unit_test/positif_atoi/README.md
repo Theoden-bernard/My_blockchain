@@ -1,7 +1,7 @@
-# My Atoi
+# Positif Atoi
 
 ## 📝 Description :
-#### My Atoi is a function who converted a array in to integer. it can take only positive numbers.
+#### Positif Atoi is a function who converted a array in to integer. it only can return positive numbers.
 ---
 ## Parameters :
 - str: The string that must be converted to an integer.
@@ -12,6 +12,6 @@
 ---
 ## Exemple : 
 ```c
-my_atoi("34");
+positif_atoi("34");
 ```
-my_atoi("34") = 34
+positif_atoi("34") = 34
