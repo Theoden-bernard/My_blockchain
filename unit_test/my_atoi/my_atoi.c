@@ -29,3 +29,13 @@ int my_atoi(char *str)
 
     return result;
 }
+
+#ifdef UNIT_TEST
+int main(){
+    my_atoi("3");
+    my_atoi("345");
+    my_atoi("-345");
+    my_atoi("Azx");
+    my_atoi("3Ax");
+}
+#endif
