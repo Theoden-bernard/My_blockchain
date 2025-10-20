@@ -39,6 +39,10 @@ int main()
 
     printf("test1 : %s\n", test1);
     printf("test2 : %s\n", test2);
-    printf("%d\n", my_strcmp(test1, test2));
+    if (my_strcmp(test1, test2) == 1)
+    {
+        return 1;
+    }
+    else return 0;
 }
 #endif
