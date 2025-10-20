@@ -25,7 +25,11 @@ int my_strlen(char* string)
 int main()
 {
     char* test = "this is a test\n";
-    printf("%d\n", my_strlen(test));
+    if (my_strlen(test) == 15)
+    {
+        return 1;
+    }
+    else return 0;
 
     return 0;
 }

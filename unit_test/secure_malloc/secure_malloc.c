@@ -22,8 +22,10 @@ void* secure_malloc(size_t size)
 int main()
 {
     char* test = secure_malloc(2);
-    free(test);
-
-    return 0;
+    if (test != NULL)
+    {
+        return 1;
+    }
+    else return 0;
 }
 #endif
