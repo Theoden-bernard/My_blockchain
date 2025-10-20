@@ -1,3 +1,5 @@
+#include <unistd.h>
+
 /**
 * @brief convert a string into an int.
 * @param char* str: string to convert.
