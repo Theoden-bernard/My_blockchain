@@ -1,3 +1,5 @@
+#ifdef UNIT_TEST
+
 /**
 * @summary malloc the buffer and verify the result of the malloc.
 * @param size_t size: size for the malloc.
@@ -13,4 +15,12 @@ void* secure_malloc(size_t size)
     }
     memset(buff, 0, size);
     return buff;
+}
+
+int main(){
+    
+    char* test = secure_malloc(2);
+    free(test);
+
+    return 0;
 }
