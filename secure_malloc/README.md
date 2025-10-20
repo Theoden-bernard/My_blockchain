@@ -11,7 +11,8 @@ Secure malloc is a function that allows you to verify that there were no problem
 - Return **NULL** if buff has been initialised incorrectly.
 ---
 ### Exemple : 
-```
+```c
 secure_malloc(sizeof(char) * 4);
 ```
 size of buff = 4;
+
