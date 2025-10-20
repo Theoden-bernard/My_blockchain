@@ -1,5 +1,5 @@
 /**
-* @summary convert a string into an int.
+* @brief convert a string into an int.
 * @param char* str: string to convert.
 * @return return the converted int.
 */

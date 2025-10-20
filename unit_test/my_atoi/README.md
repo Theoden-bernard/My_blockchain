@@ -1,7 +1,7 @@
 # My Atoi
 
 ## 📝 Description :
-#### My Atoi is a function who converted a array in to integer.
+#### My Atoi is a function who converted a array in to integer. it can take only positive numbers.
 ---
 ## Parameters :
 - str: The string that must be converted to an integer.
