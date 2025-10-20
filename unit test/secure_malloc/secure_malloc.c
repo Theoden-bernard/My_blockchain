@@ -21,8 +21,8 @@ void* secure_malloc(size_t size)
     return buff;
 }
 
-int main(){
-    
+int main()
+{
     char* test = secure_malloc(2);
     free(test);
 
