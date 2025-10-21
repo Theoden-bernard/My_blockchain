@@ -12,11 +12,12 @@
 ---
 ## Proto
 ```c 
-char *my_itoa(int num)
+char* my_itoa(int num)
 ```
 *num* the signed int to convert
-*converted string (this sting has been allocated in itoa and must be freed later on
+*converted string (this sting has been allocated in itoa and must be freed later on)
 
+---
 ## Exemple : 
 ```c
 my_itoa(34);

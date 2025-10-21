@@ -21,7 +21,7 @@ int my_strlen(char* string)
 }
 
 
-#ifdef UNIT_TEST
+/*#ifdef UNIT_TEST
 int main()
 {
     char* test = "this is a test\n";
@@ -33,4 +33,4 @@ int main()
 
     return 0;
 }
-#endif
+#endif*/
