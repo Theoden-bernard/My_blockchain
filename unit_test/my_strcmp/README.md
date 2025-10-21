@@ -11,8 +11,5 @@
 ---
 ## Exemple : 
 ```c
-char* test1 = "abc";
-char* test2 = "ABC";
-printf("%d\n", my_strcmp(test1, test2)); 
+my_strcmp(test1, test2); 
 ```
-value printed : 1;

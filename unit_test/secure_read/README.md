@@ -14,8 +14,6 @@
 ---
 ## Exemple : 
 ```c
-int fd = open("README.md");
-char* buff = malloc(sizeof(char) * 100);
 secure_read(fd, buff, strlen(buff));
 ```
-value returned by secure_read: size of README.md
+value returned by secure_read: number of bytes read.
