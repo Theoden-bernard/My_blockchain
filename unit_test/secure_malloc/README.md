@@ -1,17 +1,24 @@
-# Secure Malloc
+# Add Node
 
 ## 📝 Description :
-#### Secure malloc is a function that allows you to verify that there were no problems during memory allocation. It take a size and allows to the latter then initialises the variable to 0 using memeset.
+#### your description
 ---
 ## Parameters :
- - size: the size of what needs to be allocated
+- param_1 : description
+- param_2 : description
+... etc
 ---
 ## Return :
-- Return a pointer on buff.
-- Return **NULL** if buff has been initialised incorrectly.
+- first return : desciption
+- second return : desciption
+---
+## Proto :
+
+param_1 context
+param_2 context
+
 ---
 ## Exemple : 
-```c
-secure_malloc(sizeof(char) * 4);
-```
-Size of buff = 4;
+
+
+$> return of your function

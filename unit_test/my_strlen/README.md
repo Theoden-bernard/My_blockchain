@@ -1,17 +1,24 @@
-# My Strlen
+# Add Node
 
 ## 📝 Description :
-#### My Strlen is a function that calculates the size of a string. If the string is NULL, returns 1.
+#### your description
 ---
 ## Parameters :
-- string : array of character that size needs to be calculated.
+- param_1 : description
+- param_2 : description
+... etc
 ---
 ## Return :
-- Return an int that is the size of the string.
-- If the string is NULL, returns 1.
+- first return : desciption
+- second return : desciption
+---
+## Proto :
+
+param_1 context
+param_2 context
+
 ---
 ## Exemple : 
-```c
-my_strlen("Test\n");
-```
-Size of string = 5;
+
+
+$> return of your function

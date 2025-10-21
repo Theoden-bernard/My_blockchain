@@ -1,27 +1,24 @@
-# My Itoa
+# Add Node
 
 ## 📝 Description :
-#### My Itoa is a function who converted a integer in to array. it can take positive and negative numbers.
+#### your description
 ---
 ## Parameters :
-- nbr: The number that must be converted to an array.
+- param_1 : description
+- param_2 : description
+... etc
 ---
 ## Return :
-- Return a **nbr_in_to_char** variable who is an array.
-- Return **"0"** if ```nbr == 0``` at the beginning of the programme.
+- first return : desciption
+- second return : desciption
 ---
-## Proto
-```c 
-char* my_itoa(int num)
-```
-*num* the signed int to convert
-*converted string (this sting has been allocated in itoa and must be freed later on)
+## Proto :
+
+param_1 context
+param_2 context
 
 ---
 ## Exemple : 
-```c
-my_itoa(34);
-my_itoa(-34);
-```
-my_atoi(34) = "34"
-my_atoi(-34) = "-34"
+
+
+$> return of your function

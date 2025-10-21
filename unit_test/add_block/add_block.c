@@ -1,6 +1,6 @@
 #include "blockchain.h"
 
-  /**
+/**
 * @summary add a new block to a given node.  
 * @param t_list* head: head of the linked list.
 *        int nid: id of the node in the linked list.

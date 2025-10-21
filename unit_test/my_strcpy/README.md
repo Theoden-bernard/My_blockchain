@@ -1,16 +1,24 @@
-# My Strcpy
+# Add Node
 
 ## 📝 Description :
-#### Copy the content of a string into another string. The two string need to be malloc before.
+#### your description
+---
 ## Parameters :
-- string : string that is copied.
-- result : string were the result is copied.
+- param_1 : description
+- param_2 : description
+... etc
 ---
 ## Return :
-- Doesn't return anything.
+- first return : desciption
+- second return : desciption
+---
+## Proto :
+
+param_1 context
+param_2 context
+
 ---
 ## Exemple : 
-```c
-my_strcpy(string, result);
-```
-Value of result : value of string;
+
+
+$> return of your function

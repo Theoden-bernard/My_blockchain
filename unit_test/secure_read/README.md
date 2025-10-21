@@ -1,19 +1,24 @@
-# Secure Read
+# Add Node
 
 ## 📝 Description :
-#### Secure read use the function read and verifies the result of it. Depending on the result, it returns -1 if it failed and the number of bytes read if it succeded.
+#### your description
 ---
 ## Parameters :
- - fd: file descriptor of the file to read in.
- - buff: string that contains the content that was read.
- - size: size of the buff.
+- param_1 : description
+- param_2 : description
+... etc
 ---
 ## Return :
-- Return the number of bytes read.
-- Return -1 if the the read failed.
+- first return : desciption
+- second return : desciption
+---
+## Proto :
+
+param_1 context
+param_2 context
+
 ---
 ## Exemple : 
-```c
-secure_read(fd, buff, strlen(buff));
-```
-Value returned by secure_read: number of bytes read.
+
+
+$> return of your function
