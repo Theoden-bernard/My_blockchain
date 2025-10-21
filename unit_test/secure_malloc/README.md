@@ -14,4 +14,4 @@
 ```c
 secure_malloc(sizeof(char) * 4);
 ```
-size of buff = 4;
+Size of buff = 4;

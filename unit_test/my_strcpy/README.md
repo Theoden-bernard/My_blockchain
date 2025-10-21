@@ -13,3 +13,4 @@
 ```c
 my_strcpy(string, result);
 ```
+Value of result : value of string;

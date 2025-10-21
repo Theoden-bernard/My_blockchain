@@ -16,4 +16,4 @@
 ```c
 secure_read(fd, buff, strlen(buff));
 ```
-value returned by secure_read: number of bytes read.
+Value returned by secure_read: number of bytes read.

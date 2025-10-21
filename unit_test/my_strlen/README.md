@@ -14,4 +14,4 @@
 ```c
 my_strlen("Test\n");
 ```
-size of string = 5;
+Size of string = 5;
