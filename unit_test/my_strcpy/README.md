@@ -11,11 +11,6 @@
 ---
 ## Exemple : 
 ```c
-char* string = malloc(sizeof(char) * 20);
-char* result = malloc(sizeof(char) * 20);
-string = "abcdefghijklmnopqrstu";
-
 my_strcpy(string, result);
-printf("%s\n", result);
 ```
-value of result : abcdefghijklmnopqrstu;
+Value of result : value of string;

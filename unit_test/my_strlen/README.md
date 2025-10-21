@@ -12,7 +12,6 @@
 ---
 ## Exemple : 
 ```c
-char* string = "Test\n";
-my_strlen(string);
+my_strlen("Test\n");
 ```
-size of string = 5;
+Size of string = 5;
