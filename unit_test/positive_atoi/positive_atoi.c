@@ -1,4 +1,4 @@
-#include <unistd.h>
+#include <blockchain.h>
 
 /**
 * @brief convert a string into an int.
@@ -34,7 +34,7 @@ int positive_atoi(char *str)
 
 #ifdef UNIT_TEST
 int main(){
-    my_atoi("3");
+    assert(my_atoi("3") && 3);
     my_atoi("345");
     my_atoi("-345");
     my_atoi("Azx");
