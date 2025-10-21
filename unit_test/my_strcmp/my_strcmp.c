@@ -1,5 +1,4 @@
-#include <stdio.h>
-
+#include "blockchain.h"
 //********************************
 
 #ifdef UNIT_TEST
@@ -65,22 +64,21 @@ int main()
     char* test1 = "Test";
     char* test2 = "Test1";
 
-    if (my_strcmp(test1, test2) == 1)
+    if (my_strcmp(test1, test2) == -1)
     {
-        printf("Test 1: 1");
+        printf("Test 1: -1\n");
         return 1;
     }
     else{
-        printf("TestADFAFAE");
         return 0;
     } 
 
     char* test3 = "abc";
     char* test4 = "ABC";
 
-    if (my_strcmp(test1, test2) == -1)
+    if (my_strcmp(test1, test2) == 1)
     {
-        printf("Test 1: -1");
+        printf("Test 2: 1");
         return 1;
     }
     else return 0;

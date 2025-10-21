@@ -1,3 +1,5 @@
+#include "blockchain.h"
+
 /**
 * @brief open the file and verify the result.
 * @param char* pathname: name of the path of the file.
