@@ -1,7 +1,7 @@
 # Nbr Node
 
 ## 📝 Description :
-#### Count the number of the node in linke list.
+#### Count the number of the node in linked list.
 ---
 ## Parameters :
 - head : Take the pointer on the head of the linked list
@@ -24,4 +24,4 @@ head = [3]->[1]->[7]->[8]->NULL
 nbr_node(head);
 ```
 
-$> ```bash 4 ```
+$> ```4```
