@@ -12,7 +12,9 @@
 - Return **head** if everything went well.
 ---
 ## Proto :
+```c
 t_list* add_node(t_list* head, string_array* array)
+```
 ---
 ## Exemple : 
 

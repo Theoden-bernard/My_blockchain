@@ -11,11 +11,13 @@
 - if the read fail, return NULL.
 ---
 ## Proto :
+```c
 t_list* my_blockchain(t_list*)
+```
 ---
 ## Exemple : 
 ```c
 my_blockchain(head);
 ```
 
-$> return the new head
+$> ```head```

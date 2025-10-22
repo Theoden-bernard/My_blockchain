@@ -1,24 +1,22 @@
-# Add Node
+# Free Block List
 
 ## 📝 Description :
-#### your description
+#### Free every element of a block list.
 ---
 ## Parameters :
-- param_1 : description
-- param_2 : description
-... etc
+- head_block: head of the block list.
 ---
 ## Return :
-- first return : desciption
-- second return : desciption
+- This function doesn't return anything
 ---
 ## Proto :
-
-param_1 context
-param_2 context
-
+```c
+void free_block_list(t_block* head_block);
+```
 ---
 ## Exemple : 
+```c
+free_block_list(head_block);
+```
 
-
-$> return of your function
+$> ```head```

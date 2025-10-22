@@ -12,11 +12,13 @@
 - if the node hasn't been found, return the head without modifying it.
 ---
 ## Proto :
+```c
 t_list* add_block(t_list* head, string_array* array)
+```
 ---
 ## Exemple : 
 ```c
 add_block(head, array);
 ```
 
-$> return the new head
+$> ```head```
