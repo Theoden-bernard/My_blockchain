@@ -1,24 +1,21 @@
-# Add Node
+# My Strlen
 
 ## 📝 Description :
-#### your description
+#### Return the lenght of a string
 ---
 ## Parameters :
-- param_1 : description
-- param_2 : description
-... etc
+- string: string to get the size of.
 ---
 ## Return :
-- first return : desciption
-- second return : desciption
+- return the size of the string.
 ---
 ## Proto :
-
-param_1 context
-param_2 context
-
+```c
+int my_strlen(char* string);
+```
 ---
 ## Exemple : 
-
-
-$> return of your function
+```c
+my_strlen("Test\n");
+```
+```$> 5```
