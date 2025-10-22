@@ -1,24 +1,23 @@
-# Add Node
+# My Readline
 
 ## 📝 Description :
-#### your description
+#### read the content of a file until a newline character or the EOF is reached.
 ---
 ## Parameters :
-- param_1 : description
-- param_2 : description
-... etc
+- fd: value of the file descriptor of the file to read.
 ---
 ## Return :
-- first return : desciption
-- second return : desciption
+- return the characters stocked inside a string.
 ---
 ## Proto :
-
-param_1 context
-param_2 context
-
+```c
+char* my_readline(int fd);
+```
 ---
 ## Exemple : 
+```c
+int fd = secure_open("toto.txt");
+char* buff = my_readline(fd);
+```
 
-
-$> return of your function
+```$> buff```

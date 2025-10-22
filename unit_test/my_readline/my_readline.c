@@ -1,5 +1,10 @@
 #include "blockchain.h"
 
+/**
+ * @brief read the content of a file until a '\n' or the end of the file is encountered.
+ * @param int fd: file descriptor of the file were the content.
+ * @return return a string with the content that was read.
+ */
 char* my_readline(int fd)
 {
     if (fd == -1)

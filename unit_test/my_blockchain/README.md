@@ -17,7 +17,7 @@ t_list* my_blockchain(t_list*)
 ---
 ## Exemple : 
 ```c
-my_blockchain(head);
+head = my_blockchain(head);
 ```
 
-$> ```head```
+```$> head```
