@@ -1,19 +1,22 @@
 # Add Node
 
 ## 📝 Description :
-#### Add Node is a function who add a node in the link list.
+#### Add Node is a function who add a node in the linked list. It creates the new node by calling the function new_node.
 ---
 ## Parameters :
-- head: head of the link list.
-- array: structur with all the info on the futur node.
+- head: head of the linked list.
+- array: structure with all the info on the futur node.
 ---
 ## Return :
 - Return a **current** if head is NULL
 - Return **head** if everything went well.
 ---
+## Proto :
+t_list* add_node(t_list* head, string_array* array)
+---
 ## Exemple : 
 
-Befor add node:
+Before add node:
 ```
 head = [2]->[3]->NULL
 array = typedef struct s_string_array

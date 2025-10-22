@@ -2,8 +2,8 @@
 
 /**
 * @brief add a node in a linked list.
-* @param s_list* head: first elem of the linked list.
-         string_array* array: array with the info of futur node.
+* @param t_list* head: head of the linked list.
+*        string_array* array: array with the info of the node id.
 * @return return the head of the linked list.
 */
 t_list* add_node(t_list* head, string_array* array)
@@ -13,7 +13,7 @@ t_list* add_node(t_list* head, string_array* array)
     if (current == NULL)
     {
         current = create_node(id);
-        print_error_message(OK);
+        // print_error_message(OK);
         return current;
     }
 
@@ -25,11 +25,11 @@ t_list* add_node(t_list* head, string_array* array)
     if (same_nid(head, id) == 0) 
     {
         current->next = create_node(id);
-        print_error_message(OK);
+        // print_error_message(OK);
     }
     else 
     {
-        print_error_message(ERR_NODE_ALREADY_EXIST);
+        // print_error_message(ERR_NODE_ALREADY_EXIST);
     }
 
     return head;
