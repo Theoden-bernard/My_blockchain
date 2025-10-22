@@ -7,16 +7,15 @@
 - head : head of the linked list that will be recovered at the start and modified throughout the program.
 ---
 ## Return :
-- first return : desciption
-- second return : desciption
+- return the head once the program is done.
+- if the read fail, return NULL.
 ---
 ## Proto :
-
-param_1 context
-param_2 context
-
+t_list* my_blockchain(t_list*)
 ---
 ## Exemple : 
+```c
+my_blockchain(head);
+```
 
-
-$> return of your function
+$> return the new head

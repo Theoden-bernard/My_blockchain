@@ -1,5 +1,9 @@
 #include "blockchain.h"
 
+/**
+* @brief free every element of a structure.
+* @param string_array* structure: structure to free.
+*/
 void free_array(string_array* structure)
 {
     int index = 0;
