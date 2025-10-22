@@ -5,21 +5,21 @@
 ---
 ## Parameters :
 - head : A pointer on the head of the linked list
----
+
 ## Return :
 1. return <span style="color:lightblue"> **1** </span> : if your linked list is <span style="color:lightblue"> **sync** </span>.
 2. return <span style="color:lightblue"> **0** </span> : if your linked list is <span style="color:lightblue"> **not sync** </span>.
----
+
 ## Proto :
 ```c
 int is_synced(t_list* head)
 ```
----
+
 ## Exemple : 
 
 ### <u>*exemple n°1*</u> :
 
-    Plan: head =  [3]->[4]->[1]-> NULL<br>
+    Plan: head =  [3]->[4]->[1]-> NULL
                    |    |    |
                    ˇ    ˇ    ˇ
                   [2]  [4] [NULL]
@@ -42,7 +42,7 @@ is_synced(head)
 
 ### <u>*exemple n°2*</u> :
 
-    Plan: head =  [3]->[4]->[1]-> NULL<br>
+    Plan: head =  [3]->[4]->[1]-> NULL
                    |    |    |
                    ˇ    ˇ    ˇ
                   [2]  [4]  [4]
