@@ -18,7 +18,18 @@ t_list* add_block(t_list* head, string_array* array)
 ---
 ## Exemple : 
 ```c
-add_block(head, array);
+typedef struct s_list {
+    int nid;                     // node id
+    struct s_block* head_block;  // block head
+    struct s_list* next;         // next node
+} t_list;
+
+typedef struct s_block {
+    char* bid;             // block id
+    struct s_block* next;  // next block
+} t_block;
+
+head = add_block(head, array);
 ```
 
-$> ```head```
+```$> head```

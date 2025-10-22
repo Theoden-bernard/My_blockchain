@@ -29,7 +29,7 @@ void* compare_input(char* input, t_list* head)
         tmp += 1;
     }
 
-    print_error_message(ERR_COMMAND_NOT_FOUND);  
+    // print_error_message(ERR_COMMAND_NOT_FOUND);  
     free_array(array);
     return head;
 }

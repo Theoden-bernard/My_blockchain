@@ -1,24 +1,22 @@
-# Add Node
+# Free Linked List
 
 ## 📝 Description :
-#### your description
+#### Free every element of a linked list and its block list.
 ---
 ## Parameters :
-- param_1 : description
-- param_2 : description
-... etc
+- head: head of the linked list.
 ---
 ## Return :
-- first return : desciption
-- second return : desciption
+- This function doesn't return anything
 ---
 ## Proto :
-
-param_1 context
-param_2 context
-
+```c
+void free_linked_list(t_list* head);
+```
 ---
 ## Exemple : 
+```c
+free_linked_list(head);
+```
 
-
-$> return of your function
+$> No return
