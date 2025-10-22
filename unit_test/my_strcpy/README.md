@@ -1,24 +1,23 @@
-# Add Node
+# My Strcpy
 
 ## 📝 Description :
-#### your description
+#### Copy the character of a string inside another.
 ---
 ## Parameters :
-- param_1 : description
-- param_2 : description
-... etc
+- string : string to copy into the destination.
+- destination : destination were the string will be copied. The destination needs to be malloc beforehand if string is also malloc.
 ---
 ## Return :
-- first return : desciption
-- second return : desciption
+- This function doesn't return anything.
 ---
 ## Proto :
-
-param_1 context
-param_2 context
-
+```c
+void my_strcpy(char* string, char* destination);
+```
 ---
 ## Exemple : 
+```c
+mystrcpy("test", string);
+```
 
 
-$> return of your function
