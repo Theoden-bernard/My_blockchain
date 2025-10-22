@@ -8,7 +8,7 @@
 - my_sync_struct: Pointer on my sync struc 
 ---
 ## Return :
-- my_sync_struct: Return a pointer on my_sync_struct
+1. my_sync_struct: Return a pointer on my_sync_struct
 ---
 ## Proto :
 ```c
