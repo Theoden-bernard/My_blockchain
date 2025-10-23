@@ -1,4 +1,5 @@
 #include "blockchain.h"
+
 /**
 * @brief copy a string into another.
 * @param char* string: string that is copied.

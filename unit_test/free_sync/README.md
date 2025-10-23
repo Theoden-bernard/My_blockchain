@@ -1,24 +1,22 @@
-# Add Node
+# Free Sync
 
 ## 📝 Description :
-#### your description
+#### Free every element of a sync struct.
 ---
 ## Parameters :
-- param_1 : description
-- param_2 : description
-... etc
+- structure: structur s_sync.
 ---
 ## Return :
-- first return : desciption
-- second return : desciption
+- This function doesn't return anything
 ---
 ## Proto :
-
-param_1 context
-param_2 context
-
+```c
+void free_sync(t_sync* structure);
+```
 ---
 ## Exemple : 
+```c
+free_linked_list(structure);
+```
 
-
-$> return of your function
+$> No return

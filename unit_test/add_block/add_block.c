@@ -1,20 +1,17 @@
 #include "blockchain.h"
 
 /**
-* @summary add a new block to a given node.  
+* @brief add a new block to a given node.  
 * @param t_list* head: head of the linked list.
-*        int nid: id of the node in the linked list.
-*        char* bid: id to give to the new block.
+*        string_array* array: contain the node id and the block id in different element of an array of string.
 * @return return the modified head with the new block.
 */
 t_list* add_block(t_list* head, string_array* array)
 {
     t_list* current = head;
     
-    char* bid = secure_malloc(sizeof(char) * my_strlen(array->array[2])); //secure_malloc(sizeof(char) * my_strlen(array->array[2]));
-    //my_strcpy(array->array[2], bid);
+    char* bid = secure_malloc(sizeof(char) * my_strlen(array->array[2]));
     my_strcpy(array->array[2], bid);
-    // printf("bid = %s : %p\n", bid, bid);
     int nid = my_atoi(array->array[3]);
 
  
@@ -25,9 +22,6 @@ t_list* add_block(t_list* head, string_array* array)
             current->head_block = new_block(current->head_block, bid, nid);
             current = current->next;
         }
-
-        print_error_message(OK);
-        // free(bid);
         return head;
     }
 
@@ -38,8 +32,7 @@ t_list* add_block(t_list* head, string_array* array)
 
     if (current == NULL)  // check if the node exist
     {
-        print_error_message(ERR_NODE_NOT_FOUND); 
-        // free(bid);
+        // print_error_message(ERR_NODE_NOT_FOUND); 
         return head;
     }
 
@@ -50,7 +43,6 @@ t_list* add_block(t_list* head, string_array* array)
         return 0;
     }
 
-    print_error_message(OK);
-    // free(bid);
+    // print_error_message(OK);
     return head;
 }

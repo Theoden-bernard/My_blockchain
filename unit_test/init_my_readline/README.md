@@ -1,24 +1,22 @@
-# Add Node
+# Init My Readline
 
 ## 📝 Description :
-#### your description
+#### Initialise a buffer for the function my_readline.
 ---
 ## Parameters :
-- param_1 : description
-- param_2 : description
-... etc
+- This function doesn't have parameters
 ---
 ## Return :
-- first return : desciption
-- second return : desciption
+- return the buffert once initialised.
 ---
 ## Proto :
-
-param_1 context
-param_2 context
-
+```c
+void* init_my_readline();
+```
 ---
 ## Exemple : 
+```c
+char* buff = init_my_readline();
+```
 
-
-$> return of your function
+```$> buff```

@@ -1,24 +1,27 @@
-# Add Node
+# Nbr Node
 
 ## 📝 Description :
-#### your description
+#### Count the number of the node in linked list.
 ---
 ## Parameters :
-- param_1 : description
-- param_2 : description
-... etc
+- head : Take the pointer on the head of the linked list
 ---
 ## Return :
-- first return : desciption
-- second return : desciption
+- return 0 : if head == NULL.
+- return index : An index who is juste the number of node in linked_list.
 ---
 ## Proto :
 
-param_1 context
-param_2 context
-
+```c
+int nrb_node(t_list* head);
+```
 ---
 ## Exemple : 
 
+*plan* :
+head = [3]->[1]->[7]->[8]->NULL
+```c
+nbr_node(head);
+```
 
-$> return of your function
+$> ```4```

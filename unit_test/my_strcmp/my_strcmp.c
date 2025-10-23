@@ -1,29 +1,4 @@
 #include "blockchain.h"
-//********************************
-
-#ifdef UNIT_TEST
-/**
-* @brief recreation of strlen.
-* @param char* string: array of character.
-* @return return the size.
-*/
-int my_strlen(char* string)
-{
-    if (string == NULL)
-    {
-        return 1;
-    }
-
-    int size = 0;
-    while (string[size] != '\0')
-    {
-        size += 1;
-    }
-    return size;
-}
-#endif
-
-//********************************
 
 /**
 * @brief recreation of the function strcmp.

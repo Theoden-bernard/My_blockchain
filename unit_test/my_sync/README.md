@@ -1,24 +1,43 @@
-# Add Node
+# My sync
 
 ## 📝 Description :
-#### your description
+#### **<u>my_sync</u>**: Is a function that synchronises your blocks across all your nodes.
 ---
 ## Parameters :
-- param_1 : description
-- param_2 : description
-... etc
----
+- head : A pointer on the head of the linked list
+- empy : Is a parameter that will be useless to us, but since we are using function pointers, our functions must contain a t_list* and a char*.
+
 ## Return :
-- first return : desciption
-- second return : desciption
----
+1. return head : my_sync return a pointer on the head of the linked list synced.
+
 ## Proto :
+```c
+t_list* my_sync(t_list* head, char* empty)
+```
 
-param_1 context
-param_2 context
-
----
 ## Exemple : 
 
+### <u>*befor sync*</u> :
+    Plan: head =  [3]->[4]->[1]-> NULL
+                   |    |    |
+                   ˇ    ˇ    ˇ
+                  [2]  [4]  [NULL]
+                   |    |  
+                   ˇ    ˇ
+               [NULL] [NULL]
 
-$> return of your function
+```c
+my_sync(head, input)
+```
+### <u>*after sync*</u> :
+
+    Plan: head =  [3]->[4]->[1]-> NULL
+                   |    |    |
+                   ˇ    ˇ    ˇ
+                  [2]  [4]  [4]
+                   |    |    |
+                   ˇ    ˇ    ˇ
+                  [4]  [2]  [2]
+                   |    |    |
+                   ˇ    ˇ    ˇ
+               [NULL] [NULL] [NULL]

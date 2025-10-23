@@ -1,24 +1,20 @@
-# Add Node
+# Free Array
 
 ## 📝 Description :
-#### your description
+#### Free a structure containing a char** and its size.
 ---
 ## Parameters :
-- param_1 : description
-- param_2 : description
-... etc
+- structure: structure to free.
 ---
 ## Return :
-- first return : desciption
-- second return : desciption
+- This function doesn't return anything
 ---
 ## Proto :
-
-param_1 context
-param_2 context
-
+void free_array(string_array* structure)
 ---
 ## Exemple : 
+```c
+free_array(structure);
+```
 
-
-$> return of your function
+$> No return
