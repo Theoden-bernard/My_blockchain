@@ -1,24 +1,24 @@
-# Add Node
+# Itoa
 
 ## 📝 Description :
-#### your description
+#### <u>**my_itoa**</u>: Is a function who converted an integer in to array.
 ---
 ## Parameters :
-- param_1 : description
-- param_2 : description
-... etc
----
+- nbr : The integer that must be converted to an array.
+
 ## Return :
-- first return : desciption
-- second return : desciption
----
+1. return <span style="color:lightblue"> **nbr_in_to_char**</span>: It's your number coverte in array.
 ## Proto :
+```c
+char* my_itoa(int nbr)
+```
 
-param_1 context
-param_2 context
-
----
 ## Exemple : 
 
 
-$> return of your function
+```c
+my_itoa(34);
+```
+```
+$> "34"
+```
