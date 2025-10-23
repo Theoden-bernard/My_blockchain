@@ -7,8 +7,8 @@
 - head : A pointer on the head of the linked list
 
 ## Return :
-1. return <span style="color:lightblue"> **1** </span> : if your linked list is <span style="color:lightblue"> **sync** </span>.
-2. return <span style="color:lightblue"> **0** </span> : if your linked list is <span style="color:lightblue"> **not sync** </span>.
+1. return <span style="color:lightblue"> **1**</span>: if your linked list is <span style="color:lightblue"> **sync** </span>.
+2. return <span style="color:lightblue"> **0**</span>: if your linked list is <span style="color:lightblue"> **not sync** </span>.
 
 ## Proto :
 ```c
