@@ -5,18 +5,50 @@
 * @param t_list* head_block: head of the list.
 * @return return the number of node.
 */
-int nbr_node(t_list* head)
+t_list* rm_node(t_list* head, string_array* array)
 {
-    if (head == NULL) {
-        return 0;
+    t_list* current = head;
+    t_list* temp = NULL;
+
+    // string_array* array = my_split(str, " ");
+    int nid = my_atoi(array->array[2]);
+    // free_array(array);
+    if (nid == -1)
+    {
+        head = NULL;
+        print_error_message(OK);
+        return head;
     }
 
-    int index = 0;
-    t_list* current = head;
+    if (current == NULL)  // if the head is NULL
+    {
+        print_error_message(ERR_NODE_NOT_FOUND);
+        return head;
+    }
 
-    while (current != NULL) {
-        index += 1;    
+    if (current->nid == nid)
+    {
+        head = head->next;
+        print_error_message(OK);
+        return head; 
+    }
+
+    while (current->next != NULL && current->next->nid != nid)  // searches for the node
+    {
         current = current->next;
     }
-    return index;
-}
+
+    if (current->next == NULL)
+    {
+        print_error_message(ERR_NODE_NOT_FOUND);
+        return head;
+    }
+
+    temp = current->next;
+    current->next = temp->next;
+
+    print_error_message(OK);
+    
+    free(temp);
+    return head;
+} 
