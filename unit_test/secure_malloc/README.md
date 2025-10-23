@@ -19,21 +19,19 @@ void* secure_malloc(size_t size)
 
 ### <u>*exemple n°1*</u> :
 ```c
-// in this exemple buff as a size of 10
 secure_malloc(size_t size)
 ```
 <u>Return value</u> :
 ```c
-$> 10
+$> buff
 ```
 ---
 
 ### <u>*exemple n°2*</u> :
 ```c
-// in this exemple buff as a size of 5
 secure_malloc(size_t size)
 ```
 <u>Return value</u> :
 ```c
-$> -1
+$> NULL
 ```
