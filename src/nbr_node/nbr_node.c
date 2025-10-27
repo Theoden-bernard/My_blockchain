@@ -1,7 +1,7 @@
 #include "blockchain.h"
 
 /**
-* @summary count number of node in the list.
+* @brief count the number of node in the list.
 * @param t_list* head_block: head of the list.
 * @return return the number of node.
 */

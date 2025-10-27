@@ -26,6 +26,6 @@ t_list* select_add(t_list* head, char* input)
     }
     
     free_array(array);
-    print_error_message(ERR_COMMAND_NOT_FOUND);
+    // print_error_message(ERR_COMMAND_NOT_FOUND);
     return head;
 }

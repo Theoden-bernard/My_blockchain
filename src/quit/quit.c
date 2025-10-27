@@ -1,9 +1,9 @@
 #include "blockchain.h"
 
- /**
+/**
 * @brief save the current linked list in a file and quit the program.
 * @param t_list* head: head of the linked list to save.
-*        char* str: string to know if the command quit was called or if the EOF was reached.
+*        char* string: string to know if the command quit was called or if the EOF was reached.
 * @return return a modified head to tell the program to quit.
 */
 t_list* quit(t_list* head, char* string)

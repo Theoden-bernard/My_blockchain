@@ -1,7 +1,7 @@
 #include "blockchain.h"
 
 /**
-* @brief free every element of a structure.
+* @brief free a structure of a string_array type and all its elements.
 * @param string_array* structure: structure to free.
 */
 void free_array(string_array* structure)

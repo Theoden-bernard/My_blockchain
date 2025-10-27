@@ -1,7 +1,7 @@
 #include "blockchain.h"
 
 /**
-* @summary read the savefile and convert it back to a linked list.
+* @brief read the savefile and convert it back to a linked list.
 * @param const char*: filename.
 * @return return the head of the linked list.
 */

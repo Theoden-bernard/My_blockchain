@@ -1,11 +1,10 @@
 #include "blockchain.h"
 
-  /**
-* @summary removes a given block from the linked list
-* @param t_list* head: head of the linked list
-*        char* bid: id of the block to remove
-*        int nid: id of the node containing the block
-* @return return the modified head
+/**
+* @brief removes a given block from the linked list.
+* @param t_list* head: head of the linked list.
+*        string_array* array: struct with a char**, containing the node id and the block id.
+* @return return the modified head.
 */
 t_list* rm_block(t_list* head, string_array* array)
 {
@@ -23,7 +22,7 @@ t_list* rm_block(t_list* head, string_array* array)
             current = current->next;
         }
 
-        print_error_message(OK);
+        // print_error_message(OK);
         // free_array(array);
         return head;
     }
@@ -35,14 +34,14 @@ t_list* rm_block(t_list* head, string_array* array)
 
     if (current == NULL)  // check if the node exist
     {
-        print_error_message(ERR_NODE_NOT_FOUND); 
+        // print_error_message(ERR_NODE_NOT_FOUND); 
         // free_array(array);
         return head;
     }
     
     current->head_block = remove_block(current->head_block, bid, nid);
 
-    print_error_message(OK);
+    // print_error_message(OK);
     // free_array(array);
 
     return head;

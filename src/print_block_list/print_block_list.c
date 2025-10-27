@@ -1,7 +1,7 @@
 #include "blockchain.h"
 
 /**
-* @summary print the element of a linked list.
+* @brief print the element of a linked list.
 * @param t_list* head: head of the linked list.
 */
 void print_double_list(t_block* head)

@@ -6,6 +6,8 @@
 #include <sys/stat.h>
 #include <assert.h>
 
+int READLINE_READ_SIZE = 512;
+
 typedef struct s_string_array
 {
     int size;

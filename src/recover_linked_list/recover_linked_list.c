@@ -1,7 +1,7 @@
 #include "blockchain.h"
 
 /**
-* @summary read the line given and add the node and the eventual blocks.
+* @brief read the line given and add the node and the eventual blocks.
 * @param t_list* head: head of the linked list were the element are added.
 *        char* str: line of character to read.
 * @return return the modified head.

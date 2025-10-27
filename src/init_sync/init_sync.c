@@ -1,7 +1,7 @@
 #include "blockchain.h"
 
 /**
-* @summary to initialise a sync struct.
+* @brief to initialise a sync struct.
 * @param t_list* head: head of the linked list.
 *        t_sync* my_sync_struct: struct sync to initiliase.
 * @return return a sync struct.

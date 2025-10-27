@@ -1,5 +1,11 @@
 #include "blockchain.h"
 
+/**
+ * @brief takes a string containing the input of the user, concatain every word into a char** and call the corresponding function.
+ * @param char* input: string that is concatained and read from.
+ *        t_list* head: head of the linked list to manipulate.
+ * @return return the head once modified.
+ */
 void* compare_input(char* input, t_list* head)
 {
     string_array* array = my_split(input, " ");

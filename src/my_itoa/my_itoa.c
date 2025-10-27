@@ -1,5 +1,10 @@
 #include <blockchain.h>
 
+/**
+ * @brief converts an int into a string.
+ * @param int nbr: number to convert as a string.
+ * @return return the number once converted.
+ */
 char* my_itoa(int nbr)
 {
     int save_nbr = nbr;

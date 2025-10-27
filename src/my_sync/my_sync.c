@@ -1,15 +1,16 @@
 #include "blockchain.h"
 
 /**
-* @summary to add all block in all node.
+* @brief to add all block in all node.
 * @param t_list* head: it's just my linked list.
+*        string_array* array: structure used in other functions.
 * @return return my linked list.
 */
 t_list* my_sync(t_list* head, char* empty){
     
     if (head == NULL)
     {
-        print_error_message(OK);
+        // print_error_message(OK);
         return head;
     }
 
@@ -23,7 +24,7 @@ t_list* my_sync(t_list* head, char* empty){
 
         if (is_synced(head) == 1) 
         {
-            print_error_message(OK);
+            // print_error_message(OK);
             return head;
         }
 
@@ -47,7 +48,7 @@ t_list* my_sync(t_list* head, char* empty){
                 }
          
                 if (temp->next == NULL && temp_block == NULL) {
-                    print_error_message(OK);
+                    // print_error_message(OK);
                     return head;
                 }
 
@@ -75,6 +76,6 @@ t_list* my_sync(t_list* head, char* empty){
             }
         }
     }
-    print_error_message(OK);
+    // print_error_message(OK);
     return head;
 }

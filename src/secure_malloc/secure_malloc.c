@@ -1,4 +1,5 @@
 #include "blockchain.h"
+
 /**
 * @brief malloc the buffer and verify the result of the malloc.
 * @param size_t size: size for the malloc.

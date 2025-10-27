@@ -21,14 +21,14 @@ t_list* select_rm(t_list* head, char* input)
 ## Exemple : 
 
 ```c
-// Is a structur to my pointer on function
+// Is a structure to my pointer on function
 typedef struct s_param {
-    char* str; // The input will compar
+    char* str; // The input will compare
     t_list*(*func)(t_list*, string_array*); // A type of pointeur on function
     t_list*(*test)(t_list*, char*); // A other type of pointeur on function
 }t_param;
 
-// I creat a array of my structure whith the info inportant for my exercise
+// I create a array of my structure whith the info inportant for my exercise
 t_param comutator[] =
 {
     {"node", rm_node, 0}, //if input == node i will execut rm_node function

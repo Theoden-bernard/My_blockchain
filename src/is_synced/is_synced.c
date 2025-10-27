@@ -1,5 +1,7 @@
-  /**
-* @summary check if the linked list is synced.
+#include "blockchain.h"
+
+/**
+* @brief check if the linked list is synced.
 * @param t_list* head: head of the linked list.
 * @return return 1 if the list is synced, 0 if not.
 */
