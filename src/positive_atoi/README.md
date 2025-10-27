@@ -1,10 +1,10 @@
-# Positif Atoi
+# Positive Atoi
 
 ## 📝 Description :
-#### Positif Atoi is a function who converted a array in to integer. it only can return positive numbers.
+#### Positive Atoi is a function who converts a array in to integer. It only can return positive numbers.
 ---
 ## Parameters :
-- str: The string that must be converted to an integer.
+- str: The string that must be converted as an integer.
 ---
 ## Return :
 - Return a **result** variable who is an integer.
@@ -14,4 +14,4 @@
 ```c
 positive_atoi("34");
 ```
-positive_atoi("34") = 34
+```positive_atoi("34") = 34``

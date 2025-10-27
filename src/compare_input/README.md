@@ -21,27 +21,27 @@ void* compare_input(char* input, t_list* head)
 ## Exemple : 
 
 ```c
-// Is a structur to my pointer on function
+// Is a structure to my pointer on function
 typedef struct s_param {
-    char* str; // The input will compar
+    char* str; // The input will compare
     t_list*(*func)(t_list*, string_array*); // A type of pointeur on function
     t_list*(*test)(t_list*, char*); // A other type of pointeur on function
 }t_param;
 
-// I creat a array of my structure whith the info inportant for my exercise
+// I create an array of my structure with the info important for my exercise
 t_param comutator[] =
 {
-    {"add", 0, select_add}, //if input == add i will execut select_add function
-    {"rm", 0, select_rm}, //if input == rm i will execut select_rm function
-    {"sync", 0, my_sync}, //if input == sync i will execut my_sync function
-    {"ls", 0, select_ls}, //if input == ls i will execut select_ls function
-    {"quit", 0, quit}, //if input == quit i will execut quit function
-    {"\0", 0, quit}, //if input == \0(/d) i will execut quit function
+    {"add", 0, select_add}, // If input == add i will execute select_add function
+    {"rm", 0, select_rm}, // If input == rm i will execute select_rm function
+    {"sync", 0, my_sync}, // If input == sync i will execute my_sync function
+    {"ls", 0, select_ls}, // If input == ls i will execute select_ls function
+    {"quit", 0, quit}, // If input == quit i will execute quit function
+    {"\0", 0, quit}, // If input == \0(/d) i will execute quit function
     {0,0,0} // End of my array 
 };
 ```
 <br>
-After this initialisation my var i will brows my array until my input == str(on my structur) or the end of my array.
+After this initialisation my var i will brows my array until my input == str(on my structure) or the end of my array.
 
 And i will return a pointeur on the head of my linked list
 

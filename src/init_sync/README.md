@@ -1,7 +1,7 @@
 # Init Sync
 
 ## 📝 Description :
-#### <u>**init_sync**</u>: It's a function who initialise my sturuct s_sync. The function allocates all the necessary variables in the structure, so remember to free your structure with the dedicated function.
+#### <u>**init_sync**</u>: It's a function who initialise my structure s_sync. The function allocates all the necessary variables in the structure, so remember to free your structure with the dedicated function.
 ---
 ## Parameters :
 - head: A pointeur on my head of my linked list

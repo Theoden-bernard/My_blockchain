@@ -4,7 +4,7 @@
 #### Free every element of a sync struct.
 ---
 ## Parameters :
-- structure: structur s_sync.
+- structure: structure s_sync.
 ---
 ## Return :
 - This function doesn't return anything
@@ -19,4 +19,4 @@ void free_sync(t_sync* structure);
 free_linked_list(structure);
 ```
 
-$> No return
+```$> No return```

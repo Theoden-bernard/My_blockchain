@@ -19,4 +19,4 @@ void free_linked_list(t_list* head);
 free_linked_list(head);
 ```
 
-$> No return
+```$> No return```

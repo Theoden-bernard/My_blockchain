@@ -19,7 +19,7 @@ t_list* add_node(t_list* head, string_array* array)
 ## Exemple : 
 
 Before add node:
-```
+```c
 head = [2]->[3]->NULL
 array = typedef struct s_string_array
 {

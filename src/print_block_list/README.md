@@ -1,24 +1,23 @@
-# Add Node
+# Print Block List
 
 ## 📝 Description :
-#### your description
+#### Print every block id of a linked list
 ---
 ## Parameters :
-- param_1 : description
-- param_2 : description
-... etc
+- head: head of the block list to print.
 ---
 ## Return :
-- first return : desciption
-- second return : desciption
+- This function doesn't return anything.
 ---
 ## Proto :
-
-param_1 context
-param_2 context
+```c
+void print_double_list(t_block* head)
+```
 
 ---
 ## Exemple : 
+```c
+print_double_list(head);
+```
 
-
-$> return of your function
+```$> No return```

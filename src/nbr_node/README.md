@@ -8,7 +8,7 @@
 ---
 ## Return :
 - return 0 : if head == NULL.
-- return index : An index who is juste the number of node in linked_list.
+- return index : An index who is just the number of node in linked_list.
 ---
 ## Proto :
 

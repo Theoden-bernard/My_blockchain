@@ -10,11 +10,13 @@
 - This function doesn't return anything
 ---
 ## Proto :
+```c
 void free_array(string_array* structure)
+```
 ---
 ## Exemple : 
 ```c
 free_array(structure);
 ```
 
-$> No return
+```$> No return```

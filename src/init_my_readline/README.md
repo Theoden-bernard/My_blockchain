@@ -7,7 +7,7 @@
 - This function doesn't have parameters
 ---
 ## Return :
-- return the buffert once initialised.
+- return a buffer that has been initialised.
 ---
 ## Proto :
 ```c
