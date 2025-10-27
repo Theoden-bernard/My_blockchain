@@ -10,8 +10,14 @@
 - Return a **result** variable who is an integer.
 - Return **-1** if ```str[index]``` has been equal **"*"**.
 ---
+## Proto :
+```c
+int positive_atoi(char *str);
+```
+---
 ## Exemple : 
 ```c
 positive_atoi("34");
 ```
+
 ```positive_atoi("34") = 34``

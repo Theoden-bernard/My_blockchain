@@ -1,24 +1,22 @@
-# Add Node
+# Quit
 
 ## 📝 Description :
-#### your description
+#### Write the linked list in a savefile and quit the programm
 ---
 ## Parameters :
-- param_1 : description
-- param_2 : description
-... etc
+- head: head of the linked list to write.
+- string: to know if the user quits the program or calls the command quit.
 ---
 ## Return :
-- first return : desciption
-- second return : desciption
+- Return a head with a value of -1, so the program knows to quit.
 ---
 ## Proto :
-
-param_1 context
-param_2 context
-
+```c
+t_list* quit(t_list* head, char* string)
+```
 ---
 ## Exemple : 
+```c
+quit(t_list*, char*);
 
-
-$> return of your function
+```$> [-1]->NULL```

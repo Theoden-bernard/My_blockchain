@@ -21,7 +21,7 @@ int secure_read(int fd, void* buff, size_t size)
 
 ### <u>*exemple n°1*</u> :
 ```c
-// in this exemple buff as a size of 10
+// in this exemple buff has a size of 10
 secure_read(fd, buff, 10);
 ```
 <u>Return value</u> :
@@ -32,7 +32,7 @@ $> 10
 
 ### <u>*exemple n°2*</u> :
 ```c
-// in this exemple buff as a size of 5
+// in this exemple buff has a size of 5
 secure_read(fd, buff, 10);
 ```
 <u>Return value</u> :

@@ -11,7 +11,6 @@
 - return index : An index who is just the number of node in linked_list.
 ---
 ## Proto :
-
 ```c
 int nrb_node(t_list* head);
 ```
@@ -24,4 +23,4 @@ head = [3]->[1]->[7]->[8]->NULL
 nbr_node(head);
 ```
 
-$> ```4```
+```$> 4```

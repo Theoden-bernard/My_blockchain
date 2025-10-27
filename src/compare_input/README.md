@@ -5,7 +5,7 @@
 
 ---
 ## Parameters :
-- <u>**input**</u> : It is the string who as send for user.
+- <u>**input**</u> : It is the string that was sent by user.
 - <u>**head**</u> : It is a pointer on the head of the linked list
 
 ## Return :
@@ -41,9 +41,9 @@ t_param comutator[] =
 };
 ```
 <br>
-After this initialisation my var i will brows my array until my input == str(on my structure) or the end of my array.
+After this initialisation my var i will browse my array until my input == str(in my structure) or the end of my array.
 
-And i will return a pointeur on the head of my linked list
+And i will return a pointer on the head of my linked list
 
 <u>For exemple</u>: <br>
 **head** == [2]->[6]-> NULL

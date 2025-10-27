@@ -11,9 +11,8 @@
 ---
 ## Proto :
 ```c
-void print_double_list(t_block* head)
+void print_double_list(t_block* head);
 ```
-
 ---
 ## Exemple : 
 ```c

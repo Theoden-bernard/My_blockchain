@@ -1,7 +1,7 @@
 # Rm Node
 
 ## 📝 Description :
-#### rm_node is a function who remove a node in the linked list.rm_node free the node for you. 
+#### rm_node is a function who removes a node in the linked list. Rm_node free the node for you. 
 
 ---
 ## Parameters :

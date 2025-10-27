@@ -1,24 +1,24 @@
-# Add Node
+# Remove Block
 
 ## 📝 Description :
-#### your description
+#### Remove a block attached to a node. If the id of the node is 
 ---
 ## Parameters :
-- param_1 : description
-- param_2 : description
-... etc
+- head: head of the block list were the node needs to be removed.
+- bid: id of the block to remove.
+- nid: id attached to the block list.
 ---
 ## Return :
-- first return : desciption
-- second return : desciption
+- Return the head once the block has been removed.
 ---
 ## Proto :
-
-param_1 context
-param_2 context
-
+```c
+t_block* remove_block(t_block* head, char* bid, int nid);
+```
 ---
 ## Exemple : 
+```c
+remove_block(head, "5", 1);
+```
 
-
-$> return of your function
+```$> head```

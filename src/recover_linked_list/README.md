@@ -1,24 +1,23 @@
-# Add Node
+# Recover Linked List
 
 ## 📝 Description :
-#### your description
+#### Receive a string containing a node and blocks attached to this node. Recreate a linked 
 ---
 ## Parameters :
-- param_1 : description
-- param_2 : description
-... etc
+- head: head of the linked list that will be recovered afterwards.
+- str: string that contains the info to recover.
 ---
 ## Return :
-- first return : desciption
-- second return : desciption
+- Return the head once recovered.
 ---
 ## Proto :
-
-param_1 context
-param_2 context
-
+```c
+t_list* recover_linked_list(t_list* head, char* str);
+```
 ---
 ## Exemple : 
+```c
+recover_linked_list(head, str);
+```
 
-
-$> return of your function
+```$> head``` 

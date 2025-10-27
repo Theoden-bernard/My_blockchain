@@ -1,14 +1,14 @@
 # Secure malloc
 
 ## 📝 Description :
-#### <u>**secure_malloc**</u>: It's a function who check is malloc as work. secure_malloc allocate a buffer in this function. <span style="color:red"> <u>**Warning**</u>:</span> **Think free when you no longer need your value.**
+#### <u>**secure_malloc**</u>: It's a function who check if malloc has worked. Secure_malloc allocate a buffer in this function. <span style="color:red"> <u>**Warning**</u>:</span> **Don't forget to free when you no longer need your value.**
 ---
 ## Parameters :
 - size : This is the size you need to allocate.
 
 ## Return :
-1. return <span style="color:lightblue"> **buff**</span>: It's the number of bits writing.
-2. return <span style="color:lightblue">**NULL**</span>: If malloc fail.
+1. return <span style="color:lightblue"> **buff**</span>: It's the number of bits writen.
+2. return <span style="color:lightblue">**NULL**</span>: If malloc failed.
 
 ## Proto :
 ```c

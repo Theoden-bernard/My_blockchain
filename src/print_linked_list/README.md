@@ -1,24 +1,23 @@
-# Add Node
+# Print Linked List
 
 ## 📝 Description :
-#### your description
+#### Print the nodes and the blocks attached to it in a linked list
 ---
 ## Parameters :
-- param_1 : description
-- param_2 : description
-... etc
+- head: head of the linked list to print.
+- empty: parameters necessary for other functions.
 ---
 ## Return :
-- first return : desciption
-- second return : desciption
+- Return the head once it's printed.
 ---
 ## Proto :
-
-param_1 context
-param_2 context
-
+```c
+t_list* print_linked_list(t_list* head, string_array* empty);
+```
 ---
 ## Exemple : 
+```c
+print_linked_list(head, empty);
+```
 
-
-$> return of your function
+```$> head```

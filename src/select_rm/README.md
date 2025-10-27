@@ -28,18 +28,18 @@ typedef struct s_param {
     t_list*(*test)(t_list*, char*); // A other type of pointeur on function
 }t_param;
 
-// I create a array of my structure whith the info inportant for my exercise
+// I create an array of my structure with the info important for my exercise
 t_param comutator[] =
 {
-    {"node", rm_node, 0}, //if input == node i will execut rm_node function
-    {"block", rm_block, 0}, //if input == block i will execut rm_block function
+    {"node", rm_node, 0}, // if input == node I will execute rm_node function
+    {"block", rm_block, 0}, // if input == block I will execute rm_block function
     {0,0,0} // End of my array 
 };
 ```
 <br>
-After this initialisation my var i will brows my array until my input == str(on my structur) or the end of my array.
+After this initialisation my var i will browse my array until my input == str(in my structur) or the end of my array.
 
-And i will return a pointeur on the head of my linked list
+And i will return a pointer on the head of my linked list
 
 <u>For exemple</u>: <br>
 **head** == [2]->[6]-> NULL

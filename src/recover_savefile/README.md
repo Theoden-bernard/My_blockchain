@@ -1,24 +1,22 @@
-# Add Node
+# Recover Savefile
 
 ## 📝 Description :
-#### your description
+#### Open a file and reads line by line its content, until the end is reached. Once a line is read, it is given to another function (recover_linked_list) to recreate a linked list.
 ---
 ## Parameters :
-- param_1 : description
-- param_2 : description
-... etc
+- filename: path of the file to open.
 ---
 ## Return :
-- first return : desciption
-- second return : desciption
+- Return the linked list once recreated.
 ---
 ## Proto :
-
-param_1 context
-param_2 context
-
+```c
+t_list* recover_savefile(char* filename)
+```
 ---
 ## Exemple : 
+```c
+recover_savefile("Savefile.txt");
+```
 
-
-$> return of your function
+```$> head``` 
