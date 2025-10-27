@@ -1,5 +1,11 @@
 #include "blockchain.h"
 
+/**
+ * @brief takes a string which is a part of the user input, to know the function to call.
+ * @param t_list* head: head of the linked list that will be modified.
+ *        char* input: string containing the user's input.
+ * @return return the head of the list once modified.
+ */
 t_list* select_ls(t_list* head, char* input)
 {
     string_array* array = NULL;
