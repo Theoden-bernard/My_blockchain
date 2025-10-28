@@ -15,3 +15,30 @@ void free_array(string_array* structure)
     free(structure->array);
     free(structure);
 }
+
+#ifdef UNIT_TEST
+int main()
+{
+    int index = 0;
+    string_array* test = secure_malloc(sizeof(string_array*));
+    test->size = 10;
+    test->array = secure_malloc(sizeof(char*) * test->size);
+    while (index < test->size)
+    {
+        test->array[index] = secure_malloc(sizeof(char) * 25);
+        index += 1;
+    }
+
+    free_array(test);
+
+    if (test == NULL)
+    {
+        printf("True\n");
+        return 1;
+    }
+    else {
+        printf("False\n");
+        return 0;
+    }
+}
+#endif
