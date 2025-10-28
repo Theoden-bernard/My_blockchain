@@ -101,7 +101,7 @@ t_list* add_block(t_list* head, string_array* array)
     return head;
 }
 
-#ifdef UNIT_TEST
+#ifdef UNIT_TEST_ADD_BLOCK
 int main()
 {
     t_list* head = secure_malloc(sizeof(t_list*));

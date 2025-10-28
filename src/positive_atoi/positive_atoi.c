@@ -17,7 +17,7 @@ int positive_atoi(char *str)
 
     if (str[index] == '-')
     {
-        return NULL;
+        return 0;
     }
 
     while (str[index] != '\0' && str[index] != ' ')
@@ -31,13 +31,3 @@ int positive_atoi(char *str)
 
     return result;
 }
-
-#ifdef UNIT_TEST
-int main(){
-    assert(my_atoi("3") && 3);
-    my_atoi("345");
-    my_atoi("-345");
-    my_atoi("Azx");
-    my_atoi("3Ax");
-}
-#endif

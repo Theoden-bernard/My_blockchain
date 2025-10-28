@@ -31,7 +31,7 @@ t_list* create_node(int id)
 t_list* add_node(t_list* head, string_array* array)
 {
     t_list* current = head;
-    int id = my_atoi(array->array[2]);
+    int id = positive_atoi(array->array[2]);
     if (current == NULL)
     {
         current = create_node(id);
@@ -57,7 +57,7 @@ t_list* add_node(t_list* head, string_array* array)
     return head;
 }
 
-#ifdef UNIT_TEST
+#ifdef UNIT_TEST_ADD_NODE
 int main()
 {
     t_list* head = secure_malloc(sizeof(t_list*));

@@ -56,6 +56,6 @@ void free_block_list(t_block*);
 void free_linked_list(t_list*);
 void free_sync(t_sync*);
 char* my_itoa(int);
-int my_atoi(char*);
+int positive_atoi(char*);
 int same_nid (t_list*, int);
 int same_bid(t_block*, t_block*);
