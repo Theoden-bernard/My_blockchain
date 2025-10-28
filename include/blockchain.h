@@ -6,6 +6,14 @@
 #include <sys/stat.h>
 #include <assert.h>
 
+#define OK 0
+#define ERR_NO_MORE_RESSOURCES 1
+#define ERR_NODE_ALREADY_EXIST 2
+#define ERR_BLOCK_ALREADY_EXIST 3
+#define ERR_NODE_NOT_FOUND 4
+#define ERR_BLOCK_NOT_FOUND 5
+#define ERR_COMMAND_NOT_FOUND 6
+
 int READLINE_READ_SIZE = 512;
 
 typedef struct s_string_array
