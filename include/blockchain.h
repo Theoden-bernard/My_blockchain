@@ -50,4 +50,9 @@ typedef struct s_param {
 int my_strlen(char*);
 void* secure_malloc(size_t);
 void print_double_list(t_block*);
+void print_error_message(int);
+int my_strcmp(char*, char*);
 void my_strcpy(char*, char*);
+char* my_itoa(int);
+int my_atoi(char*);
+int same_bid(t_block*, t_block*);
