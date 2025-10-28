@@ -14,8 +14,6 @@
 #define ERR_BLOCK_NOT_FOUND 5
 #define ERR_COMMAND_NOT_FOUND 6
 
-int READLINE_READ_SIZE = 512;
-
 typedef struct s_string_array
 {
     int size;
