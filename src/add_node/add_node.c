@@ -56,3 +56,37 @@ t_list* add_node(t_list* head, string_array* array)
 
     return head;
 }
+
+#ifdef UNIT_TEST
+int main()
+{
+    t_list* head = secure_malloc(sizeof(t_list*));
+    head->nid = 1;
+    head->next = NULL;
+
+    string_array* test = secure_malloc(sizeof(string_array*));
+    test->array = secure_malloc(sizeof(char*) * 3);
+    test->array[0] = "add";
+    test->array[1] = "node";
+    test->array[2] = "2";
+    test->size = 3;
+
+    add_node(head, test);
+
+    if (head->next->nid == 2)
+    {
+        free_linked_list(head);
+        free_array(test);
+        printf("True\n");
+        return 1;
+    }
+    else
+    {
+        free_linked_list(head);
+        free_array(test);
+        printf("False\n");
+        return 0;
+    }
+    
+}
+#endif

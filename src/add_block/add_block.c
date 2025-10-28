@@ -120,13 +120,18 @@ int main()
 
     if (my_strcmp(head->head_block->bid, "1") == 0)
     {
+        free_linked_list(head);
+        free_array(test);
         printf("True\n");
         return 1;
     }
     else
     {
+        free_linked_list(head);
+        free_array(test);
         printf("False\n");
         return 0;
     }
+
 }
 #endif
