@@ -20,17 +20,16 @@ int my_strlen(char* string)
     return size;
 }
 
-
-/*#ifdef UNIT_TEST
+#ifdef UNIT_TEST
 int main()
 {
     char* test = "this is a test\n";
     if (my_strlen(test) == 15)
     {
+        printf("True\n");
         return 1;
     }
-    else return 0;
-
+    printf("False\n");
     return 0;
 }
-#endif*/
+#endif
