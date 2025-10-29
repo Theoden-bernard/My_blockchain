@@ -60,3 +60,18 @@ t_list* my_blockchain(t_list* head)
     }
     return head;
 }
+
+#ifdef UNIT_TEST_MY_BLOCKCHAIN
+int main()
+{
+    t_list* head = NULL;
+    head = my_blockchain(head)
+    if (head != NULL)
+    {
+        printf("True\n");
+        return 1;
+    }
+    printf("False");
+    return 0;
+}
+#endif
