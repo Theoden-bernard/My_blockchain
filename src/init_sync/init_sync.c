@@ -32,3 +32,27 @@ t_sync* init_sync_struct(t_list* head, t_sync* my_sync_struct)
 
     return my_sync_struct;
 }
+
+#ifdef UNIT_TEST_INIT_SYNC
+int main()
+{
+    t_list* head = secure_malloc(sizeof(t_list*));
+    head->nid = 1;
+    head->head_block = secure_malloc(sizeof(t_block*));
+    head->head_block->bid = secure_malloc(sizeof(char) * 3);
+    head->head_block->next = NULL;
+    head->next = secure_malloc(sizeof(t_list*));
+    head->next->nid = 2;
+    head->next->next = NULL;
+
+    t_sync* test = init_sync_struct(head, test);
+
+    if (test != NULL)
+    {
+        printf("True\n");
+        return 1;
+    }
+    printf("False\n");
+    return 0;
+}
+#endif

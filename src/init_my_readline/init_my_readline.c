@@ -15,7 +15,7 @@ void* init_my_readline()
 #ifdef UNIT_TEST_INIT_MY_READLINE
 int main()
 {
-    char* test = init_my_readline;
+    char* test = init_my_readline();
     if (test != NULL)
     {
         printf("True\n");
