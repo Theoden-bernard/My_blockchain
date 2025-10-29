@@ -18,7 +18,7 @@ void* secure_malloc(size_t size)
     return buff;
 }
 
-#ifdef UNIT_TEST
+#ifdef UNIT_TEST_SECURE_MALLOC
 int main()
 {
     char* test = secure_malloc(2);

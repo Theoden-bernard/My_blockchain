@@ -1,5 +1,7 @@
 #include "blockchain.h"
 
+int READLINE_READ_SIZE = 512;
+
 /**
  * @brief create a buffer for readline using secure_malloc.
  * @return the buffer initialised.

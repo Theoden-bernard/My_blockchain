@@ -6,7 +6,13 @@
 #include <sys/stat.h>
 #include <assert.h>
 
-int READLINE_READ_SIZE = 512;
+#define OK 0
+#define ERR_NO_MORE_RESSOURCES 1
+#define ERR_NODE_ALREADY_EXIST 2
+#define ERR_BLOCK_ALREADY_EXIST 3
+#define ERR_NODE_NOT_FOUND 4
+#define ERR_BLOCK_NOT_FOUND 5
+#define ERR_COMMAND_NOT_FOUND 6
 
 typedef struct s_string_array
 {
@@ -42,4 +48,14 @@ typedef struct s_param {
 int my_strlen(char*);
 void* secure_malloc(size_t);
 void print_double_list(t_block*);
+void print_error_message(int);
+int my_strcmp(char*, char*);
 void my_strcpy(char*, char*);
+void free_array(string_array*);
+void free_block_list(t_block*);
+void free_linked_list(t_list*);
+void free_sync(t_sync*);
+char* my_itoa(int);
+int positive_atoi(char*);
+int same_nid (t_list*, int);
+int same_bid(t_block*, t_block*);

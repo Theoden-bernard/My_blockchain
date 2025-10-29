@@ -1,24 +1,58 @@
 #include "blockchain.h"
 
-#ifdef UNIT_TEST
 /**
-* @brief malloc the buffer and verify the result of the malloc.
-* @param size_t size: size for the malloc.
-* @return return the buffer that has been malloc.
+* @brief create a new block to the end of a block list.
+* @param char* bid: id of the block to create. 
+*        int nid: id of the node were the block list is rattached to.
+* @return return the new node.
 */
-void* secure_malloc(size_t size)
+t_block* new_block(t_block* head_block, char* bid, int nid)
 {
-    char* buff = malloc(size);
-    if (buff == NULL)
+    t_block* current = head_block;
+    t_block* new_block = secure_malloc(sizeof(t_block));
+
+    if (new_block == NULL)
     {
-        // print_error_message(ERR_NO_MORE_RESSOURCES);
-        write(1, "no more ressources available\n", 29);
-        return NULL;
+        print_error_message(ERR_NO_MORE_RESSOURCES);
+        free(new_block);
+        return head_block;
     }
-    memset(buff, 0, size);
-    return buff;
+
+     new_block->bid = bid;
+    new_block->next = NULL;
+
+    if (head_block == NULL)  // if no block has been initialised yet
+    {
+        return new_block;
+    }
+
+    if (same_bid(current, new_block) == 1)
+    {   
+        if (nid != -1)
+        {
+            print_error_message(ERR_BLOCK_ALREADY_EXIST);
+        }
+        free(new_block);
+        return head_block;
+    }
+
+    while (current->next != NULL)
+    {
+        if (same_bid(current, new_block) == 1)
+        {
+            if (nid != -1)
+            {
+                print_error_message(ERR_BLOCK_ALREADY_EXIST);
+            }
+            free(new_block);
+            return head_block;
+        }
+        current = current->next;
+    }
+    current->next = new_block;
+    new_block->next = NULL;
+    return head_block;
 }
-#endif
 
 /**
 * @brief add a new block to a given node.  
@@ -52,7 +86,7 @@ t_list* add_block(t_list* head, string_array* array)
 
     if (current == NULL)  // check if the node exist
     {
-        // print_error_message(ERR_NODE_NOT_FOUND); 
+        print_error_message(ERR_NODE_NOT_FOUND); 
         return head;
     }
 
@@ -63,7 +97,7 @@ t_list* add_block(t_list* head, string_array* array)
         return 0;
     }
 
-    // print_error_message(OK);
+    print_error_message(OK);
     return head;
 }
 
@@ -71,7 +105,32 @@ t_list* add_block(t_list* head, string_array* array)
 int main()
 {
     t_list* head = secure_malloc(sizeof(t_list*));
-    head->nid = 4;
+    head->nid = 1;
     head->next = NULL;
+    
+    string_array* test = secure_malloc(sizeof(string_array));
+    test->array = secure_malloc(sizeof(char*) * 4);
+    test->array[0] = "add";
+    test->array[1] = "block";
+    test->array[2] = "1";
+    test->array[3] = "1";
+    test->size = 4;
+
+    add_block(head, test);
+
+    if (my_strcmp(head->head_block->bid, "1") == 0)
+    {
+        free_linked_list(head);
+        free_array(test);
+        printf("True\n");
+        return 1;
+    }
+    else {
+        free_linked_list(head);
+        free_array(test);
+        printf("False\n");
+        return 0;
+    }
+
 }
 #endif
