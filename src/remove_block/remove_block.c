@@ -55,3 +55,27 @@ t_block* remove_block(t_block* head, char* bid, int nid)
     
     return head;
 }
+
+#ifdef UNIT_TEST_REMOVE_BLOCK
+int main()
+{
+    t_list* head = secure_malloc(sizeof(t_list*));
+    head->nid = 1;
+    head->head_block = secure_malloc(sizeof(t_block*));
+    head->head_block->bid = "1";
+    head->head_block->next = NULL;
+    head->next = secure_malloc(sizeof(t_list*));
+    head->next->nid = 2;
+    head->next->next = NULL;
+
+    head->head_block = remove_block(head->head_block, "1", 1);
+
+    if (head->head_block->bid = NULL)
+    {
+        printf("True\n");
+        return 1;
+    }
+    printf("False\n");
+    return 0;
+}
+#endif
