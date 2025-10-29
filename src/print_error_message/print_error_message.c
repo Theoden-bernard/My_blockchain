@@ -28,3 +28,12 @@ void print_error_message(int err)
         write(1, "6: command not found\n", my_strlen("6: command not found\n"));
     }
 }
+
+#ifdef UNIT_TEST_PRINT_ERROR_MESSAGE
+int main()
+{
+    print_error_message(OK);
+    printf("True\n");
+    return 1;
+}
+#endif
