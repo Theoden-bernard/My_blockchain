@@ -31,3 +31,18 @@ int positive_atoi(char *str)
 
     return result;
 }
+
+#ifdef UNIT_TEST_POSITIVE_ATOI
+int main()
+{
+    int test = positive_atoi("123");
+
+    if (test = 123)
+    {
+        printf("True\n");
+        return 1;
+    }
+    printf("False\n");
+    return 0;
+}
+#endif
