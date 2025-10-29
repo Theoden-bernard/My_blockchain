@@ -18,41 +18,6 @@ void* secure_malloc(size_t size)
     memset(buff, 0, size);
     return buff;
 }
-
-/**
-* @brief recreation of strlen.
-* @param char* string: array of character.
-* @return return the size.
-*/
-int my_strlen(char* string)
-{
-    if (string == NULL)
-    {
-        return 1;
-    }
-
-    int size = 0;
-    while (string[size] != '\0')
-    {
-        size += 1;
-    }
-    return size;
-}
-
-/**
-* @brief copy a string into another.
-* @param char* string: string that is copied.
-*        char* result: where the string is copied.
-*/
-void my_strcpy(char* string, char* result)
-{
-    int index = 0;
-    while (string[index] != '\0' && string[index] != '\n')
-    {
-        result[index] = string[index];
-        index += 1;
-    }
-}
 #endif
 
 /**
@@ -105,13 +70,8 @@ t_list* add_block(t_list* head, string_array* array)
 #ifdef UNIT_TEST_ADD_BLOCK
 int main()
 {
-    char* test = "this is a test\n";
-    if (my_strlen(test) == 15)
-    {
-        return 1;
-    }
-    else return 0;
-
-    return 0;
+    t_list* head = secure_malloc(sizeof(t_list*));
+    head->nid = 4;
+    head->next = NULL;
 }
 #endif
