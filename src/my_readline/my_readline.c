@@ -36,3 +36,19 @@ char* my_readline(int fd)
     
     return NULL;
 }
+
+#ifdef UNIT_TEST_MY_READLINE
+int main()
+{
+    int fd = open("./src/my_readline/my_readline.c");
+    char* test = my_readline(fd);
+
+    if (test != NULL)
+    {
+        printf("True\n");
+        return 1;
+    }
+    printf("False\n");
+    return 0;
+}
+#endif
