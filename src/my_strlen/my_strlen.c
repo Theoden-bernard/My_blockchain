@@ -20,7 +20,7 @@ int my_strlen(char* string)
     return size;
 }
 
-#ifdef UNIT_TEST
+#ifdef UNIT_TEST_MY_STRLEN
 int main()
 {
     char* test = "this is a test\n";

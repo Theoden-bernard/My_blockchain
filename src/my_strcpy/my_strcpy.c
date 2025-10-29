@@ -15,7 +15,7 @@ void my_strcpy(char* string, char* result)
     }
 }
 
-#ifdef UNIT_TEST
+#ifdef UNIT_TEST_MY_STRCPY
 int main()
 {
     char* string = malloc(sizeof(char) * 10);

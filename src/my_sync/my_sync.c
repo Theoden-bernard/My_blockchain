@@ -79,3 +79,29 @@ t_list* my_sync(t_list* head, char* empty){
     // print_error_message(OK);
     return head;
 }
+
+#ifdef UNIT_TEST_MY_SYNC
+int main()
+{
+    t_list* head = secure_malloc(sizeof(t_list*));
+    head->nid = 1;
+    head->head_block = secure_malloc(sizeof(t_block*));
+    head->head_block->bid = "3";
+    head->head_block->next = NULL;
+    head->next = secure_malloc(sizeof(t_list*));
+    head->next->nid = 2;
+    head->next->head_block = secure_malloc(sizeof(t_block*));
+    head->next->head_block->bid = "1";
+    head->next->next = NULL;
+
+    head = my_sync(head, "");
+
+    if (strcmp(head->head_block->bid->next, "1") == 0)
+    {
+        printf("True\n");
+        return 1;
+    }
+    printf("False\n");
+    return 0;
+}
+#endif
