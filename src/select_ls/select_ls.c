@@ -1,6 +1,55 @@
 #include "blockchain.h"
 
 /**
+* @brief print the element of a linked list.
+* @param t_list* head: head of the linked list.
+*        string_array* array: structure used in other functions.
+* @return return the head of the linked list printed.
+*/
+t_list* print_ls(t_list* head, string_array* empty)
+{
+    (void) empty;
+    t_list* current = head;
+
+    while (current != NULL)
+    {
+        printf("%d", current->nid);
+        printf("\n");
+        current = current->next;
+    }
+    
+    return head;
+}
+
+/**
+* @brief print the element of a linked list.
+* @param t_list* head: head of the linked list.
+*        string_array* array: structure used in other functions.
+* @return return the head of the linked list printed.
+*/
+t_list* print_linked_list(t_list* head, string_array* empty)
+{
+    (void) empty;
+    t_list* current = head;
+
+    while (current != NULL)
+    {
+        printf("%d", current->nid);
+
+        if (current->head_block != NULL)
+        {
+            printf(": ");
+            print_double_list(current->head_block);
+        }
+        
+        printf("\n");
+        current = current->next;
+    }
+
+    return head;
+}
+
+/**
  * @brief takes a string which is a part of the user input, to know the function to call.
  * @param t_list* head: head of the linked list that will be modified.
  *        char* input: string containing the user's input.
@@ -37,7 +86,8 @@ t_list* select_ls(t_list* head, char* input)
         tmp += 1;
     }
     
-    // print_error_message(ERR_COMMAND_NOT_FOUND);
     free_array(array);
+    print_error_message(ERR_COMMAND_NOT_FOUND);
+
     return head;
 }
