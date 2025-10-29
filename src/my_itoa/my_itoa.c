@@ -65,3 +65,18 @@ char* my_itoa(int nbr)
 
     return nbr_in_to_char;
 }
+
+#ifdef UNIT_TEST_MY_ITOA
+int main()
+{
+    char* test = my_itoa(123);
+
+    if (my_strcmp(test, "123") == 0)
+    {
+        printf("True\n");
+        return 1;
+    }
+    printf("False\n")
+    return 0;
+}
+#endif
