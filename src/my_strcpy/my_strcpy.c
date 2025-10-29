@@ -24,8 +24,10 @@ int main()
     my_strcpy(string, result);
     if (strcmp(string, result) == 0)
     {
+        printf("True\n");
         return 1;
     }
+    printf("False\n");
     return 0;
 }
 #endif
