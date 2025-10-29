@@ -38,3 +38,22 @@ t_list* quit(t_list* head, char* string)
 
     return quit;
 }
+
+#ifdef UNIT_TEST_QUIT
+int main()
+{
+    t_list* head = secure_malloc(sizeof(t_list*));
+    head->nid = 1;
+    head->head_block = secure_malloc(sizeof(t_block*));
+    head->head_block->bid = "1";
+    head->head_block->next = NULL;
+    head->next = secure_malloc(sizeof(t_list*));
+    head->next->nid = 2;
+    head->next->next = NULL;
+
+    head = quit(head, "");
+
+    printf("True\n");
+    return 1;
+}
+#endif

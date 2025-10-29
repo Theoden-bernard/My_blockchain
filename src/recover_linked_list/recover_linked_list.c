@@ -45,3 +45,19 @@ t_list* recover_linked_list(t_list* head, char* str)
 
     return head;
 }
+
+#ifdef UNIT_TEST_RECOVER_LINKED_LIST
+int main()
+{
+    t_list* head = NULL;
+    head = recover_linked_list(head, "1: 3 4\n");
+
+    if (head != NULL)
+    {
+        printf("True\n");
+        return 1;
+    }
+    printf("False\n");
+    return 0;
+}
+#endif
