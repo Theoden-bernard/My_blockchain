@@ -13,7 +13,6 @@ void print_double_list(t_block* head)
         printf("%s ", current->bid);
         current = current->next;
     }
-    
     printf("%s", current->bid);
 }
 
