@@ -24,8 +24,10 @@ int main()
     char* test = secure_malloc(2);
     if (test != NULL)
     {
+        printf("True\n");
         return 1;
     }
-    else return 0;
+    printf("False\n");
+    return 0;
 }
 #endif

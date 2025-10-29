@@ -18,15 +18,17 @@ int secure_read(int fd, void* buff, size_t size)
     return result;
 }
 
-#ifdef UNIT_TEST
+#ifdef UNIT_TEST_SECURE_READ
 int main()
 {
     int fd = open("README.md");
     char* buff = malloc(sizeof(char) * 100);
     if (secure_read(fd, buff, strlen(buff)) > 0)
     {
+        printf("True\n")
         return 1;
     }
-    else return 0;
+    printf("False\n");
+    return 0;
 }
 #endif

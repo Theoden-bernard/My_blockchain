@@ -18,10 +18,16 @@ int secure_write(int fd, const void* buff, size_t size)
     return result;
 }
 
-#ifdef UNIT_TEST
+#ifdef UNIT_TEST_SECURE_WRITE
 int main()
 {
     int fd = secure_open("README.md");
-    assert(secure_write(fd, "test", my_strlen("test")) > 1);
+    if (secure_write(fd, "test", my_strlen("test")) > 1)
+    {
+        printf("True\n");
+        return 1;
+    }
+    printf("False\n");
+    return 0;
 }
 #endif

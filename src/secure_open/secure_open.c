@@ -18,14 +18,16 @@ int secure_open(char* pathname, int flags)
     return result;
 }
 
-#ifdef UNIT_TEST
+#ifdef UNIT_TEST_SECURE_OPEN
 int main()
 {
     int fd = secure_open("README.md" | O_RDONLY);
     if (fd > -1)
     {
+        printf("True\n");
         return 1;
     }
-    else return 0;
+    printf("False\n");
+    return 0;
 }
 #endif
