@@ -80,12 +80,9 @@ int main()
         printf("True\n");
         return 1;
     }
-    else {
-        free_linked_list(head);
-        free_array(test);
-        printf("False\n");
-        return 0;
-    }
-
+    free_linked_list(head);
+    free_array(test);
+    printf("False\n");
+    return 0;
 }
 #endif
