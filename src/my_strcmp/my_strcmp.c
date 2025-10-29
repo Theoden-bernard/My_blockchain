@@ -36,36 +36,13 @@ int my_strcmp(char* string1, char* string2)
 #ifdef UNIT_TEST_STRCMP
 int main()
 {
-    char* test1 = "Test";
-    char* test2 = "Test1";
+    char* test1 = "Test1";
+    char* test2 = "Test";
 
     if (my_strcmp(test1, test2) == -1)
     {
-        printf("Test 1: -1\n");
+        printf("True");
         return 1;
     }
-    else{
-        return 0;
-    } 
-
-    char* test3 = "abc";
-    char* test4 = "ABC";
-
-    if (my_strcmp(test1, test2) == 1)
-    {
-        printf("Test 2: 1");
-        return 1;
-    }
-    else return 0;
-
-    char* test5 = "toto";
-    char* test6 = "toto";
-
-    if (my_strcmp(test1, test2) == 0)
-    {
-        printf("Test 3: 0");
-        return 1;
-    }
-    else return 0;
 }
 #endif
