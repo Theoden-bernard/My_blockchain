@@ -14,7 +14,7 @@ t_block* remove_block(t_block* head, char* bid, int nid)
 
     if (head == NULL)  // check if the linked list isn't NULL
     {
-        // print_error_message(ERR_BLOCK_NOT_FOUND);
+        print_error_message(ERR_BLOCK_NOT_FOUND);
         return head;
     }
 
@@ -24,7 +24,7 @@ t_block* remove_block(t_block* head, char* bid, int nid)
         {   
             if (nid != 0)
             {
-                // print_error_message(ERR_BLOCK_NOT_FOUND);
+                print_error_message(ERR_BLOCK_NOT_FOUND);
             }
             return head;            
         }
@@ -43,7 +43,7 @@ t_block* remove_block(t_block* head, char* bid, int nid)
     {
         if (nid != -1)
         {
-            // print_error_message(ERR_BLOCK_NOT_FOUND);
+            print_error_message(ERR_BLOCK_NOT_FOUND);
         }
     
         return head;
@@ -70,7 +70,7 @@ int main()
 
     head->head_block = remove_block(head->head_block, "1", 1);
 
-    if (head->head_block->bid = NULL)
+    if (head->head_block->bid == NULL)
     {
         printf("True\n");
         return 1;
