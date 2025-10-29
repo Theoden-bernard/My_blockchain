@@ -16,3 +16,22 @@ void print_double_list(t_block* head)
     
     printf("%s", current->bid);
 }
+
+#ifdef UNIT_TEST_PRINT_DOUBLE_LIST
+int main()
+{
+    t_block* head_block = secure_malloc(sizeof(t_block*));
+    head_block->bid = "1";
+    head_block->next = secure_malloc(sizeof(t_block*));
+    head_block->next->bid = "2";
+    head_block->next->next = secure_malloc(sizeof(t_block*));
+    head_block->next->next->bid = "3";
+    head_block->next->next->next = secure_malloc(sizeof(t_block*));
+    head_block->next->next->next->next = NULL;
+
+    print_double_list(head_block);
+
+    printf("True\n");
+    return 1;
+}
+#endif
