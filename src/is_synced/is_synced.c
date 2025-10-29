@@ -54,3 +54,27 @@ int is_synced(t_list* head)
     free_sync(my_sync_struct);
     return synced;
 }
+
+#ifdef UNIT_TEST_IS_SYNCED
+int main()
+{
+    t_list* head = secure_malloc(sizeof(t_list*));
+    head->nid = 1;
+    head->head_block = secure_malloc(sizeof(t_block*));
+    head->head_block->bid = "1";
+    head->head_block->next = NULL;
+    head->next = secure_malloc(sizeof(t_list*));
+    head->next->nid = 2;
+    head->next->head_block = secure_malloc(sizeof(t_block*));
+    head->next->head_block->bid = "1";
+    head->next->next = NULL;
+
+    if (is_synced(head))
+    {
+        printf("True\n");
+        return 1;
+    }
+    printf("False\n");
+    return 0;
+}
+#endif
