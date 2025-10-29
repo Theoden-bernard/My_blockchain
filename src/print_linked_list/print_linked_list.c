@@ -39,5 +39,10 @@ int main()
     head->next = secure_malloc(sizeof(t_list*));
     head->next->nid = 2;
     head->next->next = NULL;
+
+    print_linked_list(head, "");
+
+    printf("True\n");
+    return 1;
 }
 #endif
