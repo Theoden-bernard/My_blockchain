@@ -27,3 +27,17 @@ t_list* recover_savefile(char* filename)
 
     return head;
 }
+
+#ifdef UNIT_TEST_RECOVER_SAVEFILE
+int main()
+{
+    head = recover_savefile("Savefile.txt");
+    if (head != NULL)
+    {
+        printf("True\n");
+        return 1;
+    }
+    printf("False\n");
+    return 0;
+}
+#endif
