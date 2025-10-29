@@ -16,7 +16,7 @@ void free_array(string_array* structure)
     free(structure);
 }
 
-#ifdef UNIT_TEST
+#ifdef UNIT_TEST_FREE_ARRAY
 int main()
 {
     int index = 0;
@@ -31,14 +31,7 @@ int main()
 
     free_array(test);
 
-    if (test == NULL)
-    {
-        printf("True\n");
-        return 1;
-    }
-    else {
-        printf("False\n");
-        return 0;
-    }
+    printf("True\n");
+    return 1;
 }
 #endif

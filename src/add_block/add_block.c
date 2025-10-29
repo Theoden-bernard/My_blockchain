@@ -18,7 +18,7 @@ t_block* new_block(t_block* head_block, char* bid, int nid)
         return head_block;
     }
 
-     new_block->bid = bid;
+    new_block->bid = bid;
     new_block->next = NULL;
 
     if (head_block == NULL)  // if no block has been initialised yet
