@@ -1,7 +1,5 @@
 #include "blockchain.h"
 
-#include "blockchain.h"
-
 /**
 * @brief create a node at the end of a linked list.
 * @param int id: id of the created node.
