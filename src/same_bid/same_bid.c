@@ -25,3 +25,27 @@ int same_bid(t_block* current_block, t_block* temp_block)
 
     return same_bid;
 }
+
+#ifdef UNIT_TEST_SAME_BID
+int main()
+{
+    t_list* head = secure_malloc(sizeof(t_list*));
+    head->nid = 1;
+    head->head_block = secure_malloc(sizeof(t_block*));
+    head->head_block->bid = "1";
+    head->head_block->next = NULL;
+    head->next = secure_malloc(sizeof(t_list*));
+    head->next->nid = 2;
+    head->next->head_block = secure_malloc(sizeof(t_block*));
+    head->head_block->next->bid = "1";
+    head->next->next = NULL;
+
+    if (same_bid(head->head_block, head->next->head_block))
+    {
+        printf("True\n");
+        return 1;
+    }
+    printf("False\n");
+    return 0;
+}
+#endif
