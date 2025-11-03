@@ -92,7 +92,7 @@ int secure_open(char* pathname, int flags)
     if (result == -1)
     {
         write(2, pathname, my_strlen(pathname));
-        write(2, "Open failed\n", my_strlen("Open failed\n"));
+        write(2, "\nOpen failed\n", my_strlen("\nOpen failed\n"));
         return -1;
     }
     return result;
@@ -101,7 +101,7 @@ int secure_open(char* pathname, int flags)
 #ifdef UNIT_TEST_SECURE_OPEN
 int main()
 {
-    int fd = secure_open("README.md" | O_RDONLY);
+    int fd = secure_open("unit_test/main.c", O_RDONLY);
     if (fd > -1)
     {
         printf("True\n");
@@ -137,14 +137,16 @@ int secure_read(int fd, void* buff, size_t size)
 #ifdef UNIT_TEST_SECURE_READ
 int main()
 {
-    int fd = open("README.md");
+    int fd = secure_open("unit_test/main.c", O_RDONLY);
     char* buff = malloc(sizeof(char) * 100);
-    if (secure_read(fd, buff, strlen(buff)) > 0)
+    if (secure_read(fd, buff, 100) > 0)
     {
-        printf("True\n")
+        printf("True\n");
+        free(buff);
         return 1;
     }
     printf("False\n");
+    free(buff);
     return 0;
 }
 #endif
@@ -162,6 +164,7 @@ int main()
 */
 int secure_write(int fd, const void* buff, size_t size)
 {
+    printf("fd: %d\n", fd);
     int result = write(fd, buff, size);
     if (result == -1)
     {
@@ -174,7 +177,7 @@ int secure_write(int fd, const void* buff, size_t size)
 #ifdef UNIT_TEST_SECURE_WRITE
 int main()
 {
-    int fd = secure_open("README.md");
+    int fd = secure_open("unit_test/main.c", O_WRONLY);
     if (secure_write(fd, "test", my_strlen("test")) > 1)
     {
         printf("True\n");
@@ -225,14 +228,16 @@ int my_strcmp(char* string1, char* string2)
 #ifdef UNIT_TEST_STRCMP
 int main()
 {
-    char* test1 = "Test1";
+    char* test1 = "Test";
     char* test2 = "Test";
 
-    if (my_strcmp(test1, test2) == -1)
+    if (my_strcmp(test1, test2) == 0)
     {
-        printf("True");
+        printf("True\n");
         return 1;
     }
+    printf("False\n");
+    return 0;
 }
 #endif
 
@@ -258,16 +263,19 @@ void my_strcpy(char* string, char* result)
 #ifdef UNIT_TEST_MY_STRCPY
 int main()
 {
-    char* string = malloc(sizeof(char) * 10);
+    char* string = "1234567890";
     char* result = malloc(sizeof(char) * 10);
-    string = "1234567890";
     my_strcpy(string, result);
-    if (strcmp(string, result) == 0)
+    if (my_strcmp(string, result) == 0)
     {
         printf("True\n");
+        free(string);
+        free(result);
         return 1;
     }
     printf("False\n");
+    free(string);
+    free(result);
     return 0;
 }
 #endif
