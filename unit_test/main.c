@@ -1449,184 +1449,6 @@ int main()
 #endif
 
 /**
-* ---------- ADD BLOCK DUPLICATE----------
-*/
-
-/**
-* @brief add a node in a linked list without printing anything.
-* @param s_list* head: first elem of the linked list.
-*        int id: id of the node.
-* @return return the head of the linked list.
-*/
-t_list* add_node_duplicate(t_list* head, int id)
-{
-    t_list* current = head;
-    
-    if (current == NULL)
-    {
-        current = create_node(id);
-        return current;
-    }
-
-      while (current->next != NULL) 
-    {
-        current = current->next;
-    }
-    
-    if (same_nid(head, id) == 0) {
-    
-        current->next = create_node(id);
-    }
-    else {
-        print_error_message(ERR_NODE_ALREADY_EXIST);
-    }
-    return head;
-}
-
-#ifdef UNIT_TEST_ADD_BLOCK_DUPLICATE
-int main()
-{
-    t_list* head = secure_malloc(sizeof(t_list*));
-    head->nid = 1;
-    head->next = NULL;
-    
-    string_array* test = secure_malloc(sizeof(string_array));
-    test->array = secure_malloc(sizeof(char*) * 4);
-    test->array[0] = "add";
-    test->array[1] = "block";
-    test->array[2] = "1";
-    test->array[3] = "1";
-    test->size = 4;
-
-    add_block(head, test);
-
-    if (my_strcmp(head->head_block->bid, "1") == 0)
-    {
-        free_linked_list(head);
-        free_array(test);
-        printf("True\n");
-        return 1;
-    }
-    free_linked_list(head);
-    free_array(test);
-    printf("False\n");
-    return 0;
-}
-#endif
-
-/**
-* ---------- RECOVER LINKED LIST ----------
-*/
-
-/**
-* @brief read the line given and add the node and the eventual blocks.
-* @param t_list* head: head of the linked list were the element are added.
-*        char* str: line of character to read.
-* @return return the modified head.
-*/
-t_list* recover_linked_list(t_list* head, char* str)
-{
-    t_list* current = head;
-    char* tmp_id = NULL; //secure_malloc(sizeof(char) * 100);
-
-    if (*str != '\0' && *str != '\n')  // identify the first character which coresponds to the node id 
-    {
-        tmp_id = find_node(str);
-        head = add_node_duplicate(head, positive_atoi(tmp_id));  // convert the char as an int
-        current = head;
-        str += my_strlen(tmp_id);  // go to the end of the node id
-        memset(tmp_id, 0, 100);
-        free(tmp_id);
-    }
-
-    if (head != NULL)
-    {
-        while (current->next != NULL)   // go to the node that has been added
-        {
-            current = current->next;
-        }
-    }
-
-    if (*str != '\0' && *str != '\n')  // skip the character ':'
-    {
-        str += 1;
-    }
-
-    while (*str != '\0' && *str != '\n')  // go trough the rest of the string
-    {
-        tmp_id = find_block(str);
-        head = add_block_duplicate(head, find_block(str), current->nid);  // add the block at the end of the block list
-        str += my_strlen(tmp_id) + 1;  // go to the next block id 
-        memset(tmp_id, 0, 100);
-        free(tmp_id);
-    }
-
-    return head;
-}
-
-#ifdef UNIT_TEST_RECOVER_LINKED_LIST
-int main()
-{
-    t_list* head = NULL;
-    head = recover_linked_list(head, "1: 3 4\n");
-
-    if (head != NULL)
-    {
-        printf("True\n");
-        return 1;
-    }
-    printf("False\n");
-    return 0;
-}
-#endif
-
-/**
-* ---------- RECOVER SAVEFILE ----------
-*/
-
-/**
-* @brief read the savefile and convert it back to a linked list.
-* @param const char*: filename.
-* @return return the head of the linked list.
-*/
-t_list* recover_savefile(char* filename)
-{
-    char* str_readline = NULL;
-    t_list* head = NULL;
-    int fd = open(filename, O_RDONLY);
-
-    if (fd == -1)
-    {
-        return NULL;
-    }
-    
-    while ((str_readline = my_readline(fd)) != NULL)
-    {
-        head = recover_linked_list(head, str_readline);
-        free(str_readline);
-    }
-    
-    close(fd);
-    free(str_readline);
-
-    return head;
-}
-
-#ifdef UNIT_TEST_RECOVER_SAVEFILE
-int main()
-{
-    head = recover_savefile("Savefile.txt");
-    if (head != NULL)
-    {
-        printf("True\n");
-        return 1;
-    }
-    printf("False\n");
-    return 0;
-}
-#endif
-
-/**
 * ---------- ADD BLOCK ----------
 */
 
@@ -1936,6 +1758,261 @@ int main()
     return 0;
 }
 #endif
+
+/**
+* ---------- ADD BLOCK DUPLICATE----------
+*/
+
+/**
+* @brief add a new block to a given node without printing anything.  
+* @param t_list* head: head of the linked list.
+*        int nid: id of the node in the linked list.
+*        char* bid: id to give to the new block.
+* @return return the modified head with the new block.
+*/
+t_list* add_block_duplicate(t_list* head, char* bid, int nid)
+{
+    t_list* current = head;
+
+      if (nid == -1)  // if the nid is *
+    {
+        while (current != NULL)
+        {
+            current->head_block = new_block(current->head_block, bid, nid);
+            current = current->next;
+        }
+        return head;
+    }
+
+      while (current != NULL && current->nid != nid)  // seach for the node
+    {
+        current = current->next;
+    }
+
+      if (current == NULL)  // check if the node exist
+    {
+        print_error_message(ERR_NODE_NOT_FOUND);
+        return head;
+    }
+
+      current->head_block = new_block(current->head_block, bid, nid);
+
+      if (current->head_block == NULL)  // check if new_block was succefull
+    {
+        return 0;
+    }
+    return head;
+}
+
+#ifdef UNIT_TEST_ADD_BLOCK_DUPLICATE
+int main()
+{
+    t_list* head = secure_malloc(sizeof(t_list*));
+    head->nid = 1;
+    head->next = NULL;
+    
+    string_array* test = secure_malloc(sizeof(string_array));
+    test->array = secure_malloc(sizeof(char*) * 4);
+    test->array[0] = "add";
+    test->array[1] = "block";
+    test->array[2] = "1";
+    test->array[3] = "1";
+    test->size = 4;
+
+    add_block(head, test);
+
+    if (my_strcmp(head->head_block->bid, "1") == 0)
+    {
+        free_linked_list(head);
+        free_array(test);
+        printf("True\n");
+        return 1;
+    }
+    free_linked_list(head);
+    free_array(test);
+    printf("False\n");
+    return 0;
+}
+#endif
+
+/**
+* ---------- ADD NODE DUPLICATE ----------
+*/
+
+/**
+* @brief add a node in a linked list without printing OK.
+* @param s_list* head: first elem of the linked list.
+*        int id: id of the node.
+* @return return the head of the linked list.
+*/
+t_list* add_node_duplicate(t_list* head, int id)
+{
+    t_list* current = head;
+    
+    if (current == NULL)
+    {
+        current = create_node(id);
+        return current;
+    }
+
+      while (current->next != NULL) 
+    {
+        current = current->next;
+    }
+    
+    if (same_nid(head, id) == 0) {
+    
+        current->next = create_node(id);
+    }
+    else {
+        print_error_message(ERR_NODE_ALREADY_EXIST);
+    }
+    return head;
+}
+
+#ifdef UNIT_TEST_ADD_NODE_DUPLICATE
+int main()
+{
+    t_list* head = secure_malloc(sizeof(t_list*));
+    head->nid = 1;
+    head->next = NULL;
+
+    string_array* test = secure_malloc(sizeof(string_array*));
+    test->array = secure_malloc(sizeof(char*) * 3);
+    test->array[0] = "add";
+    test->array[1] = "node";
+    test->array[2] = "2";
+    test->size = 3;
+
+    add_node(head, test);
+
+    if (head->next->nid == 2)
+    {
+        free_linked_list(head);
+        free_array(test);
+        printf("True\n");
+        return 1;
+    }
+    free_linked_list(head);
+    free_array(test);
+    printf("False\n");
+    return 0;
+}
+#endif
+
+
+/**
+* ---------- RECOVER LINKED LIST ----------
+*/
+
+/**
+* @brief read the line given and add the node and the eventual blocks.
+* @param t_list* head: head of the linked list were the element are added.
+*        char* str: line of character to read.
+* @return return the modified head.
+*/
+t_list* recover_linked_list(t_list* head, char* str)
+{
+    t_list* current = head;
+    char* tmp_id = NULL; //secure_malloc(sizeof(char) * 100);
+
+    if (*str != '\0' && *str != '\n')  // identify the first character which coresponds to the node id 
+    {
+        tmp_id = find_node(str);
+        head = add_node_duplicate(head, positive_atoi(tmp_id));  // convert the char as an int
+        current = head;
+        str += my_strlen(tmp_id);  // go to the end of the node id
+        memset(tmp_id, 0, 100);
+        free(tmp_id);
+    }
+
+    if (head != NULL)
+    {
+        while (current->next != NULL)   // go to the node that has been added
+        {
+            current = current->next;
+        }
+    }
+
+    if (*str != '\0' && *str != '\n')  // skip the character ':'
+    {
+        str += 1;
+    }
+
+    while (*str != '\0' && *str != '\n')  // go trough the rest of the string
+    {
+        tmp_id = find_block(str);
+        head = add_block_duplicate(head, find_block(str), current->nid);  // add the block at the end of the block list
+        str += my_strlen(tmp_id) + 1;  // go to the next block id 
+        memset(tmp_id, 0, 100);
+        free(tmp_id);
+    }
+
+    return head;
+}
+
+#ifdef UNIT_TEST_RECOVER_LINKED_LIST
+int main()
+{
+    t_list* head = NULL;
+    head = recover_linked_list(head, "1: 3 4\n");
+
+    if (head != NULL)
+    {
+        printf("True\n");
+        return 1;
+    }
+    printf("False\n");
+    return 0;
+}
+#endif
+
+/**
+* ---------- RECOVER SAVEFILE ----------
+*/
+
+/**
+* @brief read the savefile and convert it back to a linked list.
+* @param const char*: filename.
+* @return return the head of the linked list.
+*/
+t_list* recover_savefile(char* filename)
+{
+    char* str_readline = NULL;
+    t_list* head = NULL;
+    int fd = open(filename, O_RDONLY);
+
+    if (fd == -1)
+    {
+        return NULL;
+    }
+    
+    while ((str_readline = my_readline(fd)) != NULL)
+    {
+        head = recover_linked_list(head, str_readline);
+        free(str_readline);
+    }
+    
+    close(fd);
+    free(str_readline);
+
+    return head;
+}
+
+#ifdef UNIT_TEST_RECOVER_SAVEFILE
+int main()
+{
+    head = recover_savefile("Savefile.txt");
+    if (head != NULL)
+    {
+        printf("True\n");
+        return 1;
+    }
+    printf("False\n");
+    return 0;
+}
+#endif
+
 
 /**
 * ---------- RM BLOCK ----------

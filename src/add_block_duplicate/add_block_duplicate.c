@@ -1,32 +1,42 @@
 #include "blockchain.h"
 
 /**
-* @brief add a node in a linked list without printing anything.
-* @param s_list* head: first elem of the linked list.
-*        int id: id of the node.
-* @return return the head of the linked list.
+* @brief add a new block to a given node without printing anything.  
+* @param t_list* head: head of the linked list.
+*        int nid: id of the node in the linked list.
+*        char* bid: id to give to the new block.
+* @return return the modified head with the new block.
 */
-t_list* add_node_duplicate(t_list* head, int id)
+t_list* add_block_duplicate(t_list* head, char* bid, int nid)
 {
     t_list* current = head;
-    
-    if (current == NULL)
+
+      if (nid == -1)  // if the nid is *
     {
-        current = create_node(id);
-        return current;
+        while (current != NULL)
+        {
+            current->head_block = new_block(current->head_block, bid, nid);
+            current = current->next;
+        }
+        return head;
     }
 
-      while (current->next != NULL) 
+      while (current != NULL && current->nid != nid)  // seach for the node
     {
         current = current->next;
     }
-    
-    if (same_nid(head, id) == 0) {
-    
-        current->next = create_node(id);
+
+      if (current == NULL)  // check if the node exist
+    {
+        print_error_message(ERR_NODE_NOT_FOUND);
+        return head;
     }
-    else {
-        print_error_message(ERR_NODE_ALREADY_EXIST);
+
+      current->head_block = new_block(current->head_block, bid, nid);
+
+      if (current->head_block == NULL)  // check if new_block was succefull
+    {
+        return 0;
     }
     return head;
 }
