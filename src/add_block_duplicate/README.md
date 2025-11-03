@@ -1,0 +1,35 @@
+# Add Block
+
+## 📝 Description :
+#### Add a block at the end of a block list. The block is created by calling the function new_block. The block list is found with the node id given.
+---
+## Parameters :
+- head: head of the linked list to modify.
+- array: structure with all the info on the futur node.
+---
+## Return :
+- return the linked list once modified.
+- if the node hasn't been found, return the head without modifying it.
+---
+## Proto :
+```c
+t_list* add_block(t_list* head, string_array* array)
+```
+---
+## Exemple : 
+```c
+typedef struct s_list {
+    int nid;                     // node id
+    struct s_block* head_block;  // block head
+    struct s_list* next;         // next node
+} t_list;
+
+typedef struct s_block {
+    char* bid;             // block id
+    struct s_block* next;  // next block
+} t_block;
+
+head = add_block(head, array);
+```
+
+```$> head```
