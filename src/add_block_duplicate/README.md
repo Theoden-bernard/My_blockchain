@@ -1,4 +1,4 @@
-# Add Block
+# Add Block Duplicate
 
 ## 📝 Description :
 #### Add a block at the end of a block list. The block is created by calling the function new_block. The block list is found with the node id given.

@@ -1,4 +1,4 @@
-# Add Node
+# Add Node Duplicate
 
 ## 📝 Description :
 #### Add Node is a function who add a node in the linked list. It creates the new node by calling the function new_node.
