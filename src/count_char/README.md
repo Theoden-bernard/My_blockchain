@@ -1,4 +1,4 @@
-# Free Array
+# Count Char
 
 ## 📝 Description :
 #### Count the number of time a certain character is found in a string.
