@@ -1125,6 +1125,51 @@ int main()
 #endif
 
 /**
+* ---------- FIND NODE ----------
+*/
+
+/**
+* @brief search for the node id.
+* @param char* string: string were the node id needs to be found.
+* @return return the node id.
+*/
+char* find_node(char* string)
+{
+    char* result = secure_malloc(sizeof(char) * 100);
+    int index = 0;
+    int jndex = 0;
+    int cpt = 0;
+    while (string[index] != '\0')
+    {
+        if (cpt == 0)
+        {
+            result[jndex] = string[index];
+            jndex += 1;
+        }
+        index += 1;
+        if (string[index] == ' ' || string[index] == ':')
+        {
+            cpt += 1;
+        }
+    }
+    return result;
+}
+
+#ifdef UNIT_TEST_FIND_NODE
+int main()
+{
+    char* string = "1: 2 3";
+    if (strcmp(find_node(string), "1") == 0)
+    {
+        printf("True\n");
+        return 1;
+    }
+    printf("False\n");
+    return 0;
+}
+#endif
+
+/**
 * ---------- INIT MY READLINE ----------
 */
 
@@ -1271,6 +1316,56 @@ int main()
 #endif
 
 /**
+* ---------- TOTAL IN ARRAY ----------
+*/
+
+/**
+* @brief count the number of element in an array.
+* @param t_sync* my_sync_struct: struct countaning the array.
+* @return return the size of the array.
+*/
+int total_in_array(t_sync* my_sync_struct)
+{
+
+    int index = 0;
+    int compt = 0;
+
+    while (compt < my_sync_struct->nbr_block_ref)
+    {
+        index += my_sync_struct->array_check_block[compt];
+        compt += 1;
+    }
+
+    return index;
+}
+
+#ifdef UNIT_TEST_TOTAL_IN_ARRAY
+int main()
+{
+    t_list* head = secure_malloc(sizeof(t_list*));
+    head->head_block = secure_malloc(sizeof(t_block*));
+    head->head_block->nid = "1";
+    head->head_block->next = secure_malloc(sizeof(t_block*));
+    head->head_block->next->nid = "2";
+    head->head_block->next->next = secure_malloc(sizeof(t_block*));
+    head->head_block->next->next->nid = "3";
+    head->head_block->next->next->next = secure_malloc(sizeof(t_block*));
+    head->head_block->next->next->next->nid = "4";
+    head->head_block->next->next->next->next = NULL
+    head->next = NULL;
+    t_sync* sync_struct = init_sync_struct(head, my_sync_struct);
+
+    if (total_in_array(sync_struct) == 4)
+    {
+        printf("True\n");
+        return 1;
+    }
+    printf("False\n");
+    return 0;
+}
+#endif
+
+/**
 * ---------- IS SYNCED ----------
 */
 
@@ -1344,56 +1439,6 @@ int main()
     head->next->next = NULL;
 
     if (is_synced(head))
-    {
-        printf("True\n");
-        return 1;
-    }
-    printf("False\n");
-    return 0;
-}
-#endif
-
-/**
-* ---------- TOTAL IN ARRAY ----------
-*/
-
-/**
-* @brief count the number of element in an array.
-* @param t_sync* my_sync_struct: struct countaning the array.
-* @return return the size of the array.
-*/
-int total_in_array(t_sync* my_sync_struct)
-{
-
-    int index = 0;
-    int compt = 0;
-
-    while (compt < my_sync_struct->nbr_block_ref)
-    {
-        index += my_sync_struct->array_check_block[compt];
-        compt += 1;
-    }
-
-    return index;
-}
-
-#ifdef UNIT_TEST_TOTAL_IN_ARRAY
-int main()
-{
-    t_list* head = secure_malloc(sizeof(t_list*));
-    head->head_block = secure_malloc(sizeof(t_block*));
-    head->head_block->nid = "1";
-    head->head_block->next = secure_malloc(sizeof(t_block*));
-    head->head_block->next->nid = "2";
-    head->head_block->next->next = secure_malloc(sizeof(t_block*));
-    head->head_block->next->next->nid = "3";
-    head->head_block->next->next->next = secure_malloc(sizeof(t_block*));
-    head->head_block->next->next->next->nid = "4";
-    head->head_block->next->next->next->next = NULL
-    head->next = NULL;
-    t_sync* sync_struct = init_sync_struct(head, my_sync_struct);
-
-    if (total_in_array(sync_struct) == 4)
     {
         printf("True\n");
         return 1;
